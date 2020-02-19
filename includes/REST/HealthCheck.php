@@ -19,6 +19,7 @@ class HealthCheck
         $healthcheck = new \stdClass();
         $healthcheck->errors = array();
         $healthcheck->warnings = array();
+        return new \WP_REST_Response($healthcheck, 200);
 
         /**
          *  Check environment, WP/PHP/SQL

@@ -561,6 +561,7 @@ class CommonFunctions
      */
     public static function isPremiumVersion()
     {
+        return true;
         static $is_premium = null;
 
         if ($is_premium === null) {

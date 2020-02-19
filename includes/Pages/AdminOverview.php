@@ -87,6 +87,7 @@ class AdminOverview
             <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Overview of synchronizations', 'wpsynchro'); ?></h2>
 
             <?php
+            /*
             // Healthcheck
             if ($run_healthcheck) {
 
@@ -106,9 +107,7 @@ class AdminOverview
                     <p><a class="wpsynchrobutton" href="https://wordpress.org/support/plugin/wpsynchro/reviews/?rate=5#new-post" target="_blank"><?php _e('Rate WP Synchro on WordPress.org', 'wpsynchro'); ?></a> <button class="wpsynchrobutton-secondary" data-dismiss-url="<?php echo esc_url($dismiss_url); ?>"><?php _e('Dismiss forever', 'wpsynchro'); ?></button></p>
                 </div>
                 <?php
-            }
-
-            ?>
+            } */ ?>
 
             <div id="overview-section-container">
                 <div class="installations">
