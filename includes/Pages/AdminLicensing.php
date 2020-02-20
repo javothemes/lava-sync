@@ -29,7 +29,7 @@ class AdminLicensing
      */
     private function handlePOST()
     {
-        // Save access key  
+        // Save access key
         if (isset($_POST['wpsynchro_license_key'])) {
             $licensekey = sanitize_key($_POST['wpsynchro_license_key']);
         } else {
@@ -42,7 +42,7 @@ class AdminLicensing
     }
 
     /**
-     *  Show WP Synchro licensing screen 
+     *  Show WP Synchro licensing screen
      *  @since 1.0.0
      */
     private function handleGET()
@@ -87,7 +87,7 @@ class AdminLicensing
                     <?php
                 } else if ($licensing_details->status === true) {
 
-                    ?>            
+                    ?>
                     <p><b><?php echo sprintf(__("License is <u>valid</u> and <u>active</u>. Last checked %s hours ago.", "wpsynchro"), $diff_hours) ?></b></p>
                     <?php
                 } else if ($licensing_details->status === false) {
@@ -100,7 +100,7 @@ class AdminLicensing
             } else {
 
                 ?>
-                <p><b><?php _e("License is not yet validated - Insert your license key and validate it.", "wpsynchro") ?></b></p>   
+                <p><b><?php _e("License is not yet validated - Insert your license key and validate it.", "wpsynchro") ?></b></p>
 
                 <?php
             }
@@ -113,7 +113,7 @@ class AdminLicensing
                     <tr>
                         <td><label for="name"><?php _e('New license key', 'wpsynchro'); ?></label></td>
                         <td>
-                            <input type="text" name="wpsynchro_license_key" id="wpsynchro_license_key_field" value="" class="regular-text ltr" ><br>                    
+                            <input type="text" name="wpsynchro_license_key" id="wpsynchro_license_key_field" value="" class="regular-text ltr" ><br>
                         </td>
                     </tr>
                 </table>
@@ -126,7 +126,7 @@ class AdminLicensing
                 <br><?php _e('After successful validation, the key will be revalidated every day to make sure it is still valid.', 'wpsynchro'); ?>
                 <br><?php _e('On the server, the key will be checked and request is logged, along with your public IP address and site url.', 'wpsynchro'); ?>
                 <br><?php _e('We dont save or send other information to the license server.', 'wpsynchro'); ?></p>
-            <p><?php _e('For every synchronization, the license server will be contacted to verify the license and the active sites limit for your subscription.', 'wpsynchro'); ?> 
+            <p><?php _e('For every synchronization, the license server will be contacted to verify the license and the active sites limit for your subscription.', 'wpsynchro'); ?>
                 <br><?php _e('These requests contain only your license key and the urls of synchronization. These will be logged along with your public IP address.', 'wpsynchro'); ?></p>
         </div>
         <?php

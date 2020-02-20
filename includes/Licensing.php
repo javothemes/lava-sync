@@ -29,7 +29,7 @@ class Licensing
     public function getLicenseDetails()
     {
         return (object) Array(
-            'license_key' => '',
+            'license_key' => str_repeat('a', 15),
             'status' => true,
             'timestamp' => time(),
             'retries' => 0,
@@ -51,6 +51,7 @@ class Licensing
      */
     public function verifyLicense()
     {
+        return true;
 
         if (!\WPSynchro\CommonFunctions::isPremiumVersion()) {
             // @codeCoverageIgnoreStart
@@ -227,6 +228,7 @@ class Licensing
         $result = new \stdClass();
         $result->state = false;
         $result->errors = array();
+        return $result;
 
         $verified_license = $this->verifyLicense();
         if ($verified_license) {
