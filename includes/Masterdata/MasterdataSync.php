@@ -94,6 +94,7 @@ class MasterdataSync
             }
 
             // Check licensing
+            /*
             if (\WPSynchro\CommonFunctions::isPremiumVersion() && count($this->job->errors) === 0) {
                 global $wpsynchro_container;
                 $licensing = $wpsynchro_container->get("class.Licensing");
@@ -102,7 +103,8 @@ class MasterdataSync
                 if ($licens_sync_result->state === false) {
                     $this->job->errors[] = array_merge($this->job->errors, $licens_sync_result->errors);
                 }
-            }
+            } */
+
         }
 
         $this->logger->log("INFO", "Completed masterdata on: " . $this->timer->endTimer($masterdata_timer) . " seconds");

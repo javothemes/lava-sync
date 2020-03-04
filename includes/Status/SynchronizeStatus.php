@@ -3,7 +3,7 @@ namespace WPSynchro\Status;
 
 /**
  * Class for serving synchronization status to the frontend
- * Called from status REST service 
+ * Called from status REST service
  *
  * @since 1.2.0
  */
@@ -31,7 +31,7 @@ class SynchronizeStatus
         $this->installation_id = $installation_id;
         $this->job_id = $job_id;
 
-        // Get job data        
+        // Get job data
         $this->job = $wpsynchro_container->get('class.Job');
         $this->job->load($this->installation_id, $this->job_id);
 
@@ -65,7 +65,7 @@ class SynchronizeStatus
         }
 
         // Database sync
-        if (isset($this->installation->sync_database) && $this->installation->sync_database) {    
+        if (isset($this->installation->sync_database) && $this->installation->sync_database) {
             $this->stages[] = $this->createSynchronizationStage("databasesync", __('Synchronize database', 'wpsynchro'), __("Synchronize the database, moving the database table rows to the target", "wpsynchro"));
         }
 
@@ -141,14 +141,14 @@ class SynchronizeStatus
         if ($this->job->run_lock_problem_time > 0 && $this->job->run_lock_problem_time < time()) {
             $this->job->errors[] = __("The synchronization process seem to have problems - It may be PHP errors - please check the PHP logs", "wpsynchro");
         }
-     
+
         // Set results
         $result = new \stdClass();
         $result->is_completed = $this->job->is_completed;
         $result->stages = $this->stages;
         $result->errors = $this->job->errors;
         $result->warnings = $this->job->warnings;
-        
+
         return $result;
     }
 }

@@ -19,7 +19,6 @@ class HealthCheck
         $healthcheck = new \stdClass();
         $healthcheck->errors = array();
         $healthcheck->warnings = array();
-        return new \WP_REST_Response($healthcheck, 200);
 
         /**
          *  Check environment, WP/PHP/SQL
@@ -34,12 +33,13 @@ class HealthCheck
         /**
          *  Check that local installation has access key set
          */
-        $accesskey = $commonfunctions->getAccessKey();
+        // $accesskey = $commonfunctions->getAccessKey();
         $accesskey_okay = true;
+        /*
         if (strlen(trim($accesskey)) < 20) {
             $healthcheck->errors[] = __("Access key for this site is not set - This needs to be configured for WP Synchro to work.", "wpsynchro");
             $accesskey_okay = false;
-        }
+        } */
 
         /*
          *  Check proper PHP extensions
@@ -77,13 +77,14 @@ class HealthCheck
          *  Check license okay, if PRO
          */
         $licenseokay = true;
+        /*
         if (\WPSynchro\CommonFunctions::isPremiumVersion()) {
             $licensing = $wpsynchro_container->get("class.Licensing");
             if ($licensing->hasProblemWithLicensing()) {
                 $licenseokay = false;
                 $healthcheck->errors[] = $licensing->getLicenseErrorMessage();
             }
-        }
+        } */
 
         /**
          *  Check local REST urls for connectivity and proper response
@@ -164,6 +165,7 @@ class HealthCheck
         /**
          *  Check other relevant dir for writability (typically for files sync)
          */
+        /*
         if (\WPSynchro\CommonFunctions::isPremiumVersion()) {
             $paths_check = array(
                 // Document root
@@ -178,7 +180,7 @@ class HealthCheck
                     $healthcheck->warnings[] = sprintf(__("Path that WP Synchro might use for synchronization is not writable- Path: %s -  This can be caused by PHP's open_basedir setting or file permissions", "wpsynchro"), $path);
                 }
             }
-        }
+        } */
 
         /**
          *  If no errors or warnings, set timestamp in database
