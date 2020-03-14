@@ -96,7 +96,7 @@ class AdminAddEdit
 
         ?>
         <div id="wpsynchro-addedit" class="wrap wpsynchro"  v-cloak>
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( $is_pro ? 'PRO' : 'FREE' ); ?> - <?php ( $id > 0 ? _e('Edit installation', 'moon114textdomain') : _e('Add installation', 'moon114textdomain') ); ?></h2>
+            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( $is_pro ? 'PRO' : 'FREE' ); ?> - <?php ( $id > 0 ? _e('Edit installation', 'wpsynchro') : _e('Add installation', 'wpsynchro') ); ?></h2>
 
             <?php
             if (count($compat_errors) > 0) {
@@ -108,12 +108,12 @@ class AdminAddEdit
             }
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                echo "<div class='notice notice-success'><p>" . __('Installation is now saved', 'moon114textdomain') . " - <a href='" . menu_page_url("wpsynchro_overview", false) . "'>" . __('Go back to overview', 'moon114textdomain') . "</a></p></div>";
+                echo "<div class='notice notice-success'><p>" . __('Installation is now saved', 'wpsynchro') . " - <a href='" . menu_page_url("wpsynchro_overview", false) . "'>" . __('Go back to overview', 'wpsynchro') . "</a></p></div>";
             } else if (isset($_REQUEST['created'])) {
-                echo "<div class='notice notice-success'><p>" . __('Installation is now created', 'moon114textdomain') . " - <a href='" . menu_page_url("wpsynchro_overview", false) . "'>" . __('Go back to overview', 'moon114textdomain') . "</a></p></div>";
+                echo "<div class='notice notice-success'><p>" . __('Installation is now created', 'wpsynchro') . " - <a href='" . menu_page_url("wpsynchro_overview", false) . "'>" . __('Go back to overview', 'wpsynchro') . "</a></p></div>";
             }
 
-            echo "<p>" . __('Fill out the details of the installation to be synced to chosen location.', 'moon114textdomain') . "</p>";
+            echo "<p>" . __('Fill out the details of the installation to be synced to chosen location.', 'wpsynchro') . "</p>";
 
             ?>
 
@@ -122,56 +122,56 @@ class AdminAddEdit
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 
                     <div class="generalsetup">
-                        <div class="sectionheader"><span class="dashicons dashicons-admin-home"></span> <?php _e('Installation', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader"><span class="dashicons dashicons-admin-home"></span> <?php _e('Installation', 'wpsynchro'); ?></div>
 
-                        <h3><?php _e('Choose a name', 'moon114textdomain'); ?></h3>
+                        <h3><?php _e('Choose a name', 'wpsynchro'); ?></h3>
                         <div class="option">
                             <div class="optionname">
-                                <label for="name"><?php _e('Name', 'moon114textdomain'); ?></label>
+                                <label for="name"><?php _e('Name', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
                                 <input v-model="inst.name" type="text" name="name" id="name" value="" required>
                             </div>
                         </div>
 
-                        <h3><?php _e('Type of synchronization', 'moon114textdomain'); ?></h3>
+                        <h3><?php _e('Type of synchronization', 'wpsynchro'); ?></h3>
                         <div class="option">
                             <div class="optionname">
-                                <label><?php _e('Type', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Type', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
-                                <div><label><input v-model="inst.type" v-bind:readonly="valid_endpoint" type="radio" name="type" value="pull" v-on:click="valid_endpoint = false" ></input> <?php _e('Pull from remote server to this installation ', 'moon114textdomain'); ?></label></div>
-                                <div><label><input v-model="inst.type" v-bind:readonly="valid_endpoint" type="radio" name="type" value="push" v-on:click="valid_endpoint = false" ></input> <?php _e('Push this installation to remote server', 'moon114textdomain'); ?></label></div>                          
+                                <div><label><input v-model="inst.type" v-bind:readonly="valid_endpoint" type="radio" name="type" value="pull" v-on:click="valid_endpoint = false" ></input> <?php _e('Pull from remote server to this installation ', 'wpsynchro'); ?></label></div>
+                                <div><label><input v-model="inst.type" v-bind:readonly="valid_endpoint" type="radio" name="type" value="push" v-on:click="valid_endpoint = false" ></input> <?php _e('Push this installation to remote server', 'wpsynchro'); ?></label></div>                          
                             </div>
                         </div>
 
                         <div v-if="inst.type.length > 0">
-                            <h3 v-if="inst.type == 'pull'"><?php _e('Where to pull from', 'moon114textdomain'); ?></h3>
-                            <h3 v-if="inst.type == 'push'"><?php _e('Where to push to', 'moon114textdomain'); ?></h3>  
+                            <h3 v-if="inst.type == 'pull'"><?php _e('Where to pull from', 'wpsynchro'); ?></h3>
+                            <h3 v-if="inst.type == 'push'"><?php _e('Where to push to', 'wpsynchro'); ?></h3>  
 
                             <div class="option">   
                                 <div class="optionname">
-                                    <label for="website"><?php _e('Website (full url)', 'moon114textdomain'); ?></label>
+                                    <label for="website"><?php _e('Website (full url)', 'wpsynchro'); ?></label>
                                 </div>
                                 <div class="optionvalue">
-                                    <input v-model="inst.site_url" v-bind:readonly="valid_endpoint" type="text" name="website" id="website" value="" placeholder="https://example.com" required> <span v-if="valid_endpoint" class="validstate dashicons dashicons-yes" title="<?php _e('Validated', 'moon114textdomain'); ?>"></span> <span v-if="site_url_is_insecure === false" class="dashicons dashicons-lock sslwarning" title="<?php _e('Connection is secure and all data will encrypted', 'moon114textdomain'); ?>"></span> <span v-if="site_url_is_insecure === true" class="dashicons dashicons-unlock sslwarning" title="<?php _e('All communication will be encrypted during synchronization.&#10;But without SSL (https://), the data retrieved during this configuration will not be encrypted.&#10;Consider using https:// instead if website supports it.', 'moon114textdomain'); ?>"></span>
+                                    <input v-model="inst.site_url" v-bind:readonly="valid_endpoint" type="text" name="website" id="website" value="" placeholder="https://example.com" required> <span v-if="valid_endpoint" class="validstate dashicons dashicons-yes" title="<?php _e('Validated', 'wpsynchro'); ?>"></span> <span v-if="site_url_is_insecure === false" class="dashicons dashicons-lock sslwarning" title="<?php _e('Connection is secure and all data will encrypted', 'wpsynchro'); ?>"></span> <span v-if="site_url_is_insecure === true" class="dashicons dashicons-unlock sslwarning" title="<?php _e('All communication will be encrypted during synchronization.&#10;But without SSL (https://), the data retrieved during this configuration will not be encrypted.&#10;Consider using https:// instead if website supports it.', 'wpsynchro'); ?>"></span>
                                 </div>
                             </div>
                             <div class="option"> 
                                 <div class="optionname">
-                                    <label for="accesskey"><?php _e('Access key', 'moon114textdomain'); ?></label>
+                                    <label for="accesskey"><?php _e('Access key', 'wpsynchro'); ?></label>
                                 </div>
                                 <div class="optionvalue">
-                                    <input v-model="inst.access_key" v-bind:readonly="valid_endpoint" type="text" name="accesskey" id="accesskey" value="" required ></input> <span v-if="valid_endpoint" class="validstate dashicons dashicons-yes"  title="<?php _e('Validated', 'moon114textdomain'); ?>"></span>                                                                      
+                                    <input v-model="inst.access_key" v-bind:readonly="valid_endpoint" type="text" name="accesskey" id="accesskey" value="" required ></input> <span v-if="valid_endpoint" class="validstate dashicons dashicons-yes"  title="<?php _e('Validated', 'wpsynchro'); ?>"></span>                                                                      
                                 </div>                            
                             </div>                            
 
-                            <button v-if="!valid_endpoint" v-bind:disabled="valid_endpoint_spinner" v-on:click.prevent="initiateVerification"><?php _e('Verify website and access key', 'moon114textdomain'); ?></button><div v-show="valid_endpoint_spinner" class="spinner"></div>
+                            <button v-if="!valid_endpoint" v-bind:disabled="valid_endpoint_spinner" v-on:click.prevent="initiateVerification"><?php _e('Verify website and access key', 'wpsynchro'); ?></button><div v-show="valid_endpoint_spinner" class="spinner"></div>
                         </div>
                     </div>
 
                     <div class="endpoint-errors" v-if="compatibility_errors.length > 0 || valid_endpoint_errors.length > 0">
-                        <div class="sectionheader sectionheadererror"><span class="dashicons dashicons-warning"></span> <?php _e('Errors was found', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader sectionheadererror"><span class="dashicons dashicons-warning"></span> <?php _e('Errors was found', 'wpsynchro'); ?></div>
 
                         <ul>
                             <li v-for="(errormessage, index) in valid_endpoint_errors">{{errormessage}}</li>
@@ -180,7 +180,7 @@ class AdminAddEdit
                     </div>
 
                     <div class="endpoint-warnings" v-if="compatibility_warnings.length > 0 && valid_endpoint">
-                        <div class="sectionheader sectionheaderwarning"><span class="dashicons dashicons-warning"></span> <?php _e('Warnings was found', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader sectionheaderwarning"><span class="dashicons dashicons-warning"></span> <?php _e('Warnings was found', 'wpsynchro'); ?></div>
 
                         <ul>                    
                             <li v-for="errortext in compatibility_warnings">{{errortext}}</li>
@@ -188,48 +188,48 @@ class AdminAddEdit
                     </div>
 
                     <div class="multisitesetting" v-if="false && valid_endpoint && (this.multisite.source_is_multisite || this.multisite.target_is_multisite)">
-                        <div class="sectionheader"><span class="dashicons dashicons-admin-multisite"></span> <?php _e('Multisite synchronization', 'moon114textdomain'); ?> [BETA]</div>                    
+                        <div class="sectionheader"><span class="dashicons dashicons-admin-multisite"></span> <?php _e('Multisite synchronization', 'wpsynchro'); ?> [BETA]</div>                    
                     </div>
 
                     <div class="generalsettings" v-if="valid_endpoint">
-                        <div class="sectionheader"><span class="dashicons dashicons-admin-tools"></span> <?php _e('General settings', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader"><span class="dashicons dashicons-admin-tools"></span> <?php _e('General settings', 'wpsynchro'); ?></div>
                         <div class="option">
                             <div class="optionname">
-                                <label><?php _e('Verify SSL', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Verify SSL', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
-                                <label><input v-model="inst.verify_ssl" type="checkbox" name="verify_ssl" id="verify_ssl" ></input> <?php _e('Verify SSL certificates - Should be turned off for self-signed certificates', 'moon114textdomain'); ?></label><br>
+                                <label><input v-model="inst.verify_ssl" type="checkbox" name="verify_ssl" id="verify_ssl" ></input> <?php _e('Verify SSL certificates - Should be turned off for self-signed certificates', 'wpsynchro'); ?></label><br>
                             </div>
                         </div>                            
                     </div>
 
                     <div class="datatosync" v-if="valid_endpoint">
-                        <div class="sectionheader"><span class="dashicons dashicons-screenoptions"></span> <?php _e('Data to synchronize', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader"><span class="dashicons dashicons-screenoptions"></span> <?php _e('Data to synchronize', 'wpsynchro'); ?></div>
 
                         <div class="option">
                             <div class="optionname">
-                                <label><?php _e('Preconfigured migrations', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Preconfigured migrations', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
                                 <limited-in-free limittext="<?php _e("Get PRO version now to start doing file synchronization and more!", "wpsynchro") ?>" v-bind:ispro="<?php echo ( $is_pro ? 'true' : 'false'); ?>" >
                                     <div class="optionvaluepart">
-                                        <label><input v-model="inst.sync_preset" type="radio" value="all" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_everything" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Synchronize entire site', 'moon114textdomain'); ?></label> 
-                                        <span title="<?php _e('Backup database, synchronize database, synchronize all files from web root level (except WordPress core files)', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span><br>
+                                        <label><input v-model="inst.sync_preset" type="radio" value="all" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_everything" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Synchronize entire site', 'wpsynchro'); ?></label> 
+                                        <span title="<?php _e('Backup database, synchronize database, synchronize all files from web root level (except WordPress core files)', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span><br>
                                     </div>
                                     <div class="optionvaluepart">
-                                        <label><input v-model="inst.sync_preset" type="radio" value="file_all" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_file_all" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Synchronize all files', 'moon114textdomain'); ?></label> 
-                                        <span title="<?php _e('Synchronize all files from web root level (except WordPress core files)', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span><br>
+                                        <label><input v-model="inst.sync_preset" type="radio" value="file_all" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_file_all" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Synchronize all files', 'wpsynchro'); ?></label> 
+                                        <span title="<?php _e('Synchronize all files from web root level (except WordPress core files)', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span><br>
                                     </div>
                                 </limited-in-free>
 
                                 <div class="optionvaluepart">
-                                    <label><input v-model="inst.sync_preset" type="radio" value="db_all" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_db_all" ></input> <?php _e('Synchronize entire database', 'moon114textdomain'); ?></label> 
-                                    <span title="<?php echo ( $is_pro ? __('Backup database and synchronize all database tables', 'moon114textdomain') : __('Backup database (Only PRO version) and synchronize all database tables', 'moon114textdomain')); ?>" class="dashicons dashicons-editor-help"></span><br>                                 
+                                    <label><input v-model="inst.sync_preset" type="radio" value="db_all" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_db_all" ></input> <?php _e('Synchronize entire database', 'wpsynchro'); ?></label> 
+                                    <span title="<?php echo ( $is_pro ? __('Backup database and synchronize all database tables', 'wpsynchro') : __('Backup database (Only PRO version) and synchronize all database tables', 'wpsynchro')); ?>" class="dashicons dashicons-editor-help"></span><br>                                 
                                 </div>
 
                                 <div class="optionvaluepart">
-                                    <label><input v-model="inst.sync_preset" type="radio" value="none" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_none" ></input> <?php _e('Choose what to synchronize', 'moon114textdomain'); ?></label> 
-                                    <span title="<?php _e('Configure exactly what you want to synchronize', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span> 
+                                    <label><input v-model="inst.sync_preset" type="radio" value="none" v-on:change="updateSyncPreset" name="sync_preset" id="sync_preset_none" ></input> <?php _e('Choose what to synchronize', 'wpsynchro'); ?></label> 
+                                    <span title="<?php _e('Configure exactly what you want to synchronize', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span> 
                                 </div>
 
                             </div>
@@ -237,58 +237,58 @@ class AdminAddEdit
 
                         <div class="option" v-if="inst.sync_preset == 'none'">
                             <div class="optionname">
-                                <label><?php _e('Choose data to synchronize', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Choose data to synchronize', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">                                                                
                                 <limited-in-free limittext="<?php _e("Get PRO version now to start doing file synchronization and more!", "wpsynchro") ?>" v-bind:ispro="<?php echo ( $is_pro ? 'true' : 'false'); ?>" >
                                     <div class="optionvaluepart">
-                                        <label><input v-model="inst.sync_files" type="checkbox" name="sync_files" id="sync_files" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Synchronize files', 'moon114textdomain'); ?> </label><br>
+                                        <label><input v-model="inst.sync_files" type="checkbox" name="sync_files" id="sync_files" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Synchronize files', 'wpsynchro'); ?> </label><br>
                                     </div>                                    
                                 </limited-in-free>
                                 <div class="optionvaluepart">
-                                    <label><input v-model="inst.sync_database" type="checkbox" name="sync_database" id="sync_database" ></input> <?php _e('Synchronize database', 'moon114textdomain'); ?></label><br>
+                                    <label><input v-model="inst.sync_database" type="checkbox" name="sync_database" id="sync_database" ></input> <?php _e('Synchronize database', 'wpsynchro'); ?></label><br>
                                 </div>
                             </div>
                         </div>                        
                     </div>
 
                     <div class="filessyncsetup" v-show="valid_endpoint && inst.sync_files && inst.sync_preset == 'none'">
-                        <div class="sectionheader"><span class="dashicons dashicons-admin-page"></span> <?php _e('Files synchronization', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader"><span class="dashicons dashicons-admin-page"></span> <?php _e('Files synchronization', 'wpsynchro'); ?></div>
 
-                        <h3><?php _e('Files and directories to migrate', 'moon114textdomain'); ?></h3> 
-                        <p><?php _e('Choose the files or directories you want to migrate and how it should be handled.', 'moon114textdomain'); ?></p>
+                        <h3><?php _e('Files and directories to migrate', 'wpsynchro'); ?></h3> 
+                        <p><?php _e('Choose the files or directories you want to migrate and how it should be handled.', 'wpsynchro'); ?></p>
 
                         <?php
-                        $abovewebroot_readwrite_error = __('Disabled because read or write access to this location is disabled on the source or target server - Normally by PHPs open_basedir setting', 'moon114textdomain');
-                        $std_readwrite_error = __('Disabled because read or write access to this location is disabled on the source or target server - Normally by incorrect file permissions', 'moon114textdomain');
+                        $abovewebroot_readwrite_error = __('Disabled because read or write access to this location is disabled on the source or target server - Normally by PHPs open_basedir setting', 'wpsynchro');
+                        $std_readwrite_error = __('Disabled because read or write access to this location is disabled on the source or target server - Normally by incorrect file permissions', 'wpsynchro');
 
                         ?>
 
                         <div class="addlocations">                            
-                            <button v-on:click.prevent="showLocationPicker('outsidewebroot',source_files_dirs.abovewebroot)" v-bind:disabled="isReadWriteRetrictedSourceTarget('abovewebroot')" v-bind:title="(isReadWriteRetrictedSourceTarget('abovewebroot') ? '<?php echo $abovewebroot_readwrite_error; ?>' : '')" ><?php _e('Add from outside web root', 'moon114textdomain'); ?></button> 
-                            <button v-on:click.prevent="showLocationPicker('webroot',source_files_dirs.webroot)" v-bind:disabled="isReadWriteRetrictedSourceTarget('webroot')" v-bind:title="(isReadWriteRetrictedSourceTarget('webroot') ? '<?php echo $std_readwrite_error; ?>' : '')" ><?php _e('Add from web root', 'moon114textdomain'); ?></button> 
-                            <button v-on:click.prevent="showLocationPicker('wpcontent',source_files_dirs.wpcontent)" v-bind:disabled="isReadWriteRetrictedSourceTarget('wpcontent')" v-bind:title="(isReadWriteRetrictedSourceTarget('wpcontent') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Add from wp-content', 'moon114textdomain'); ?></button>
+                            <button v-on:click.prevent="showLocationPicker('outsidewebroot',source_files_dirs.abovewebroot)" v-bind:disabled="isReadWriteRetrictedSourceTarget('abovewebroot')" v-bind:title="(isReadWriteRetrictedSourceTarget('abovewebroot') ? '<?php echo $abovewebroot_readwrite_error; ?>' : '')" ><?php _e('Add from outside web root', 'wpsynchro'); ?></button> 
+                            <button v-on:click.prevent="showLocationPicker('webroot',source_files_dirs.webroot)" v-bind:disabled="isReadWriteRetrictedSourceTarget('webroot')" v-bind:title="(isReadWriteRetrictedSourceTarget('webroot') ? '<?php echo $std_readwrite_error; ?>' : '')" ><?php _e('Add from web root', 'wpsynchro'); ?></button> 
+                            <button v-on:click.prevent="showLocationPicker('wpcontent',source_files_dirs.wpcontent)" v-bind:disabled="isReadWriteRetrictedSourceTarget('wpcontent')" v-bind:title="(isReadWriteRetrictedSourceTarget('wpcontent') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Add from wp-content', 'wpsynchro'); ?></button>
                         </div>
 
                         <fieldset>
                             <legend>Quick add</legend>
-                            <button type="button" v-on:click="quickAddFileLocation('webroot')" v-bind:disabled="isReadWriteRetrictedSourceTarget('webroot')" v-bind:title="(isReadWriteRetrictedSourceTarget('webroot') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Web root', 'moon114textdomain'); ?></button>
-                            <button type="button" v-on:click="quickAddFileLocation('themes')" v-bind:disabled="isReadWriteRetrictedSourceTarget('themes')" v-bind:title="(isReadWriteRetrictedSourceTarget('themes') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Themes', 'moon114textdomain'); ?></button>
-                            <button type="button" v-on:click="quickAddFileLocation('plugins')" v-bind:disabled="isReadWriteRetrictedSourceTarget('plugins')" v-bind:title="(isReadWriteRetrictedSourceTarget('plugins') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Plugins', 'moon114textdomain'); ?></button>
-                            <button type="button" v-on:click="quickAddFileLocation('uploads')" v-bind:disabled="isReadWriteRetrictedSourceTarget('uploads')" v-bind:title="(isReadWriteRetrictedSourceTarget('uploads') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Uploads', 'moon114textdomain'); ?></button>                                
+                            <button type="button" v-on:click="quickAddFileLocation('webroot')" v-bind:disabled="isReadWriteRetrictedSourceTarget('webroot')" v-bind:title="(isReadWriteRetrictedSourceTarget('webroot') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Web root', 'wpsynchro'); ?></button>
+                            <button type="button" v-on:click="quickAddFileLocation('themes')" v-bind:disabled="isReadWriteRetrictedSourceTarget('themes')" v-bind:title="(isReadWriteRetrictedSourceTarget('themes') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Themes', 'wpsynchro'); ?></button>
+                            <button type="button" v-on:click="quickAddFileLocation('plugins')" v-bind:disabled="isReadWriteRetrictedSourceTarget('plugins')" v-bind:title="(isReadWriteRetrictedSourceTarget('plugins') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Plugins', 'wpsynchro'); ?></button>
+                            <button type="button" v-on:click="quickAddFileLocation('uploads')" v-bind:disabled="isReadWriteRetrictedSourceTarget('uploads')" v-bind:title="(isReadWriteRetrictedSourceTarget('uploads') ? '<?php echo $std_readwrite_error; ?>' : '')"><?php _e('Uploads', 'wpsynchro'); ?></button>                                
                         </fieldset>
 
-                        <h3><?php _e('Locations', 'moon114textdomain'); ?></h3>
-                        <p v-if="inst.file_locations.length == 0"><?php _e('No files or directories selected yet. Add them with the buttons above.', 'moon114textdomain'); ?></p>
+                        <h3><?php _e('Locations', 'wpsynchro'); ?></h3>
+                        <p v-if="inst.file_locations.length == 0"><?php _e('No files or directories selected yet. Add them with the buttons above.', 'wpsynchro'); ?></p>
 
                         <div class="locationstable" v-if="inst.file_locations.length > 0">
 
                             <div v-if="overlapping_file_sections.length > 0" class="syncerrors">
                                 <div class="iconpart">&#9940;</div>   
                                 <div>
-                                    <p><b><?php _e('Please correct these locations:', 'moon114textdomain') ?></b></p>
+                                    <p><b><?php _e('Please correct these locations:', 'wpsynchro') ?></b></p>
                                     <ul>
-                                        <li v-for="(paths, index) in overlapping_file_sections"><?php _e('<u>{{paths[0]}}</u> overlaps with <u>{{paths[1]}}</u>', 'moon114textdomain'); ?></li>
+                                        <li v-for="(paths, index) in overlapping_file_sections"><?php _e('<u>{{paths[0]}}</u> overlaps with <u>{{paths[1]}}</u>', 'wpsynchro'); ?></li>
                                     </ul>    
                                 </div>
                             </div>
@@ -296,10 +296,10 @@ class AdminAddEdit
                             <table>
                                 <thead>
                                     <tr>
-                                        <th><?php _e('Type', 'moon114textdomain'); ?></th> 
-                                        <th><?php _e('Full path', 'moon114textdomain'); ?></th>                                               
-                                        <th><?php _e('Strategy', 'moon114textdomain'); ?></th>
-                                        <th><?php _e('Exclusions', 'moon114textdomain'); ?></th>
+                                        <th><?php _e('Type', 'wpsynchro'); ?></th> 
+                                        <th><?php _e('Full path', 'wpsynchro'); ?></th>                                               
+                                        <th><?php _e('Strategy', 'wpsynchro'); ?></th>
+                                        <th><?php _e('Exclusions', 'wpsynchro'); ?></th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -311,11 +311,11 @@ class AdminAddEdit
                             </table> 
                         </div>
 
-                        <h3><?php _e('General exclusions', 'moon114textdomain'); ?></h3>
-                        <p><?php _e('Exclude files or directories, separated by comma. Ex: .htaccess,favicon.ico,my-secret-dir', 'moon114textdomain'); ?><br><?php _e('WP folders wp-admin, wp-includes and WP files in web root, as well as WP Synchro plugin and data are excluded.', 'moon114textdomain'); ?><br><?php _e('These are applied to all file locations chosen in file/dir location list.', 'moon114textdomain'); ?></p>    
+                        <h3><?php _e('General exclusions', 'wpsynchro'); ?></h3>
+                        <p><?php _e('Exclude files or directories, separated by comma. Ex: .htaccess,favicon.ico,my-secret-dir', 'wpsynchro'); ?><br><?php _e('WP folders wp-admin, wp-includes and WP files in web root, as well as WP Synchro plugin and data are excluded.', 'wpsynchro'); ?><br><?php _e('These are applied to all file locations chosen in file/dir location list.', 'wpsynchro'); ?></p>    
                         <div class="option">
                             <div class="optionname">
-                                <label><?php _e('Exclusions', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Exclusions', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
                                 <label><input v-model="inst.files_exclude_files_match" type="text" name="files_exclude_files_match" id="files_exclude_files_match" ></input></label>                       
@@ -325,45 +325,45 @@ class AdminAddEdit
                     </div>
 
                     <div class="dbsyncsetup" v-show="valid_endpoint && inst.sync_database && inst.sync_preset == 'none'">
-                        <div class="sectionheader"><span class="dashicons dashicons-update"></span> <?php _e('Database synchronization', 'moon114textdomain'); ?></div>
-                        <h3><?php _e('Database migration settings', 'moon114textdomain'); ?></h3>      
+                        <div class="sectionheader"><span class="dashicons dashicons-update"></span> <?php _e('Database synchronization', 'wpsynchro'); ?></div>
+                        <h3><?php _e('Database migration settings', 'wpsynchro'); ?></h3>      
                         <limited-in-free limittext="<?php _e("Get PRO version now to start doing file synchronization and more!", "wpsynchro") ?>" v-bind:fit="true" v-bind:ispro="<?php echo ( $is_pro ? 'true' : 'false'); ?>" >
                             <div class="option">
                                 <div class="optionname">
-                                    <label><?php _e('Backup database tables', 'moon114textdomain'); ?></label>                                
+                                    <label><?php _e('Backup database tables', 'wpsynchro'); ?></label>                                
                                 </div>
                                 <div class="optionvalue">
-                                    <label><input v-model="inst.db_make_backup" type="checkbox" name="db_make_backup" id="db_make_backup" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Backup chosen database tables to file', 'moon114textdomain'); ?> <span title="<?php _e('Backup database tables before overwriting them. Will be written to a .sql file that can be imported again by phpmyadmin or equal tools.', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span> (<?php _e('Recommended', 'moon114textdomain'); ?>)</label>
+                                    <label><input v-model="inst.db_make_backup" type="checkbox" name="db_make_backup" id="db_make_backup" <?php echo ( $is_pro ? '' : 'disabled'); ?> ></input> <?php _e('Backup chosen database tables to file', 'wpsynchro'); ?> <span title="<?php _e('Backup database tables before overwriting them. Will be written to a .sql file that can be imported again by phpmyadmin or equal tools.', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span> (<?php _e('Recommended', 'wpsynchro'); ?>)</label>
                                 </div>
                             </div>
                         </limited-in-free>
 
                         <div class="option">
                             <div class="optionname">
-                                <label><?php _e('Table prefix migration', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Table prefix migration', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
-                                <label><input v-model="inst.db_table_prefix_change" type="checkbox" name="db_table_prefix_change" id="db_table_prefix_change" ></input> <?php _e('Migrate table prefix and data if needed', 'moon114textdomain'); ?> <span title="<?php _e('Will rename database tables, so they match the correct prefix on target - Will also rename keys in rows in options and usermeta tables. This may cause problems, if the renames accidentally renames something it shouldnt, that is custom or used by another plugin', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span> (<?php _e('Recommended', 'moon114textdomain'); ?>)</label><br>
+                                <label><input v-model="inst.db_table_prefix_change" type="checkbox" name="db_table_prefix_change" id="db_table_prefix_change" ></input> <?php _e('Migrate table prefix and data if needed', 'wpsynchro'); ?> <span title="<?php _e('Will rename database tables, so they match the correct prefix on target - Will also rename keys in rows in options and usermeta tables. This may cause problems, if the renames accidentally renames something it shouldnt, that is custom or used by another plugin', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span> (<?php _e('Recommended', 'wpsynchro'); ?>)</label><br>
                             </div>
                         </div>
 
                         <div class="option">
                             <div class="optionname">
-                                <label><?php _e('Active plugins', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Active plugins', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
-                                <label><input v-model="inst.db_preserve_activeplugins" type="checkbox" name="db_preserve_activeplugins" id="db_preserve_activeplugins" checked="checked" ></input> <?php _e('Preserve active plugins settings', 'moon114textdomain'); ?> <span title="<?php _e('Preserve which plugins are activated and which ones are not. When enabled, you will not risk having other plugins activated, that you dont already have activated', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span> (<?php _e('Recommended', 'moon114textdomain'); ?>)</label>
+                                <label><input v-model="inst.db_preserve_activeplugins" type="checkbox" name="db_preserve_activeplugins" id="db_preserve_activeplugins" checked="checked" ></input> <?php _e('Preserve active plugins settings', 'wpsynchro'); ?> <span title="<?php _e('Preserve which plugins are activated and which ones are not. When enabled, you will not risk having other plugins activated, that you dont already have activated', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span> (<?php _e('Recommended', 'wpsynchro'); ?>)</label>
                             </div>
                         </div>
 
-                        <h3><?php _e('Search/replace', 'moon114textdomain'); ?></h3>
-                        <p><?php _e('Add your project specific search/replaces.', 'moon114textdomain'); ?><br><?php _e('Search/replace is done in a case sensitive manner and in the order listed below.', 'moon114textdomain'); ?></p>
+                        <h3><?php _e('Search/replace', 'wpsynchro'); ?></h3>
+                        <p><?php _e('Add your project specific search/replaces.', 'wpsynchro'); ?><br><?php _e('Search/replace is done in a case sensitive manner and in the order listed below.', 'wpsynchro'); ?></p>
 
 
                         <div class="searchreplaces" >
                             <div class="searchreplaceheadlines">
-                                <div><?php _e('Search', 'moon114textdomain'); ?></div>
-                                <div><?php _e('Replace', 'moon114textdomain'); ?></div>
+                                <div><?php _e('Search', 'wpsynchro'); ?></div>
+                                <div><?php _e('Replace', 'wpsynchro'); ?></div>
                             </div>
 
                             <draggable v-model="inst.searchreplaces"  v-bind:options="{handle:'.handle'}">
@@ -377,17 +377,17 @@ class AdminAddEdit
                         </div>
 
                         <div>
-                            <button class="addsearchreplace" v-on:click="addSearchReplace()"  type="button"><?php _e('Add replace', 'moon114textdomain'); ?></button>
-                            <button class="resetsearchreplace" v-on:click="createDefaultSearchReplaces()"  type="button"><?php _e('Reset to recommended', 'moon114textdomain'); ?></button>
+                            <button class="addsearchreplace" v-on:click="addSearchReplace()"  type="button"><?php _e('Add replace', 'wpsynchro'); ?></button>
+                            <button class="resetsearchreplace" v-on:click="createDefaultSearchReplaces()"  type="button"><?php _e('Reset to recommended', 'wpsynchro'); ?></button>
                         </div>
 
-                        <h3><?php _e('Tables to synchronize', 'moon114textdomain'); ?></h3>
+                        <h3><?php _e('Tables to synchronize', 'wpsynchro'); ?></h3>
                         <div class="option">
                             <div class="optionname">
-                                <label><?php _e('Database tables', 'moon114textdomain'); ?></label>
+                                <label><?php _e('Database tables', 'wpsynchro'); ?></label>
                             </div>
                             <div class="optionvalue">
-                                <label><input v-model="inst.include_all_database_tables" type="checkbox" name="include_all_database_tables" id="include_all_database_tables" checked="checked" ></input> <?php _e('Synchronize all database tables', 'moon114textdomain'); ?></label><br>
+                                <label><input v-model="inst.include_all_database_tables" type="checkbox" name="include_all_database_tables" id="include_all_database_tables" checked="checked" ></input> <?php _e('Synchronize all database tables', 'wpsynchro'); ?></label><br>
                                 <div v-if="! inst.include_all_database_tables" id="exclude_db_expanded_part">
                                     <div>
                                         <select v-model="inst.only_include_database_table_names" id="exclude_db_tables_select" name="only_include_database_table_names[]" multiple>
@@ -397,9 +397,9 @@ class AdminAddEdit
                                         </select>       
                                     </div>
                                     <div class="helppart">
-                                        <div><b><?php _e('How to use:', 'moon114textdomain'); ?></b></div>
-                                        <p><?php _e('<u>Win</u>: CTRL-A to mark all - Select/deselect tables by holding CTRL while clicking table', 'moon114textdomain'); ?></p>
-                                        <p><?php _e('<u>Mac</u>: &#8984;-A to mark all - Select/deselect tables by holding &#8984; while clicking table', 'moon114textdomain'); ?></p>
+                                        <div><b><?php _e('How to use:', 'wpsynchro'); ?></b></div>
+                                        <p><?php _e('<u>Win</u>: CTRL-A to mark all - Select/deselect tables by holding CTRL while clicking table', 'wpsynchro'); ?></p>
+                                        <p><?php _e('<u>Mac</u>: &#8984;-A to mark all - Select/deselect tables by holding &#8984; while clicking table', 'wpsynchro'); ?></p>
                                     </div>
                                 </div>
 
@@ -410,7 +410,7 @@ class AdminAddEdit
                     </div>
 
                     <div class="validate-errors" v-if="validate_errors.length > 0 && valid_endpoint">
-                        <div class="sectionheader sectionheadererror"><span class="dashicons dashicons-warning"></span> <?php _e('Could not save due to validation issues', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader sectionheadererror"><span class="dashicons dashicons-warning"></span> <?php _e('Could not save due to validation issues', 'wpsynchro'); ?></div>
 
                         <ul>                
                             <li v-for="errortext in validate_errors">{{errortext}}</li>
@@ -418,9 +418,9 @@ class AdminAddEdit
                     </div>
 
                     <div class="savesetup" v-if="valid_endpoint">
-                        <div class="sectionheader"><span class="dashicons dashicons-edit"></span> <?php _e('Save installation', 'moon114textdomain'); ?></div>
+                        <div class="sectionheader"><span class="dashicons dashicons-edit"></span> <?php _e('Save installation', 'wpsynchro'); ?></div>
                         <p>
-                            <input type="submit" v-on:click.prevent="actionsBeforeSubmit" v-if="valid_endpoint" value="<?php _e('Save', 'moon114textdomain'); ?>" ></input>
+                            <input type="submit" v-on:click.prevent="actionsBeforeSubmit" v-if="valid_endpoint" value="<?php _e('Save', 'wpsynchro'); ?>" ></input>
                         </p>
                     </div>
 
@@ -450,16 +450,16 @@ class AdminAddEdit
         <input type="hidden" name="file_locations_exclusions[]" v-bind:value="location.exclusions" ></input>
 
 
-        <td class="type">{{ (location.is_file ? "<?php _e('File', 'moon114textdomain'); ?>" : "<?php _e('Dir', 'moon114textdomain'); ?>") }}</td>  
+        <td class="type">{{ (location.is_file ? "<?php _e('File', 'wpsynchro'); ?>" : "<?php _e('Dir', 'wpsynchro'); ?>") }}</td>  
         <td class="path"><code>{{ (showFullPath(location.base, location.path)) }}</code></td>    
 
         <td class="migratestrategy">                  
-            <div v-if="location.strategy == 'keep' && !location.is_file"><?php _e('Keep', 'moon114textdomain'); ?> <span title="<?php _e('Files on target not existing on source will be kept', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span></div>
-            <div v-if="location.strategy == 'clean' && !location.is_file"><?php _e('Clean', 'moon114textdomain'); ?> <span title="<?php _e('Files on target not present on source will be deleted', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span></div>            
-            <div v-if="location.is_file"><?php _e('Overwrite', 'moon114textdomain'); ?> <span title="<?php _e('File will be overwritten', 'moon114textdomain'); ?>" class="dashicons dashicons-editor-help"></span></div>            
+            <div v-if="location.strategy == 'keep' && !location.is_file"><?php _e('Keep', 'wpsynchro'); ?> <span title="<?php _e('Files on target not existing on source will be kept', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span></div>
+            <div v-if="location.strategy == 'clean' && !location.is_file"><?php _e('Clean', 'wpsynchro'); ?> <span title="<?php _e('Files on target not present on source will be deleted', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span></div>            
+            <div v-if="location.is_file"><?php _e('Overwrite', 'wpsynchro'); ?> <span title="<?php _e('File will be overwritten', 'wpsynchro'); ?>" class="dashicons dashicons-editor-help"></span></div>            
         </td>
-        <td class="exclu">{{ (location.exclusions ? location.exclusions : "<?php _e('N/A', 'moon114textdomain'); ?>") }}</td>   
-        <td><span v-on:click="$delete(inst.file_locations, key)" title="<?php _e('Delete this location', 'moon114textdomain'); ?>" class="deletelocation dashicons dashicons-trash"></span></td>
+        <td class="exclu">{{ (location.exclusions ? location.exclusions : "<?php _e('N/A', 'wpsynchro'); ?>") }}</td>   
+        <td><span v-on:click="$delete(inst.file_locations, key)" title="<?php _e('Delete this location', 'wpsynchro'); ?>" class="deletelocation dashicons dashicons-trash"></span></td>
         </tr> 
 
         <?php

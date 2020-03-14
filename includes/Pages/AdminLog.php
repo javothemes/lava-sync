@@ -59,11 +59,11 @@ class AdminLog
 
         ?>
         <div class="wrap wpsynchro-log">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Last synchronization logs', 'moon114textdomain'); ?></h2>
+            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Last synchronization logs', 'wpsynchro'); ?></h2>
 
             <div class="logremove">                   
-                <p><?php _e('See your last synchronizations and the result of them. Here you can also download the log file from the synchronization.', 'moon114textdomain'); ?></p>
-                <a class="removealllogs" href="<?= $removelogs_url ?>"><button class="wpsynchrobutton"><?php _e('Delete all logs', 'moon114textdomain'); ?></button></a>
+                <p><?php _e('See your last synchronizations and the result of them. Here you can also download the log file from the synchronization.', 'wpsynchro'); ?></p>
+                <a class="removealllogs" href="<?= $removelogs_url ?>"><button class="wpsynchrobutton"><?php _e('Delete all logs', 'wpsynchro'); ?></button></a>
             </div>
 
             <div class="synclogs">

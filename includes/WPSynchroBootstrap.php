@@ -142,12 +142,12 @@ class WPSynchroBootstrap
 
             add_menu_page('WP Synchro', 'WP Synchro', 'manage_options', 'wpsynchro_menu', array(__NAMESPACE__ . '\\Pages\AdminOverview', 'render'), 'dashicons-update', 76);
             add_submenu_page('wpsynchro_menu', '', '', 'manage_options', 'wpsynchro_menu', '');
-            add_submenu_page('wpsynchro_menu', __('Overview', 'moon114textdomain'), __('Overview', 'moon114textdomain'), 'manage_options', 'wpsynchro_overview', array(__NAMESPACE__ . '\\Pages\AdminOverview', 'render'));
-            add_submenu_page('wpsynchro_menu', __('Logs', 'moon114textdomain'), __('Logs', 'moon114textdomain'), 'manage_options', 'wpsynchro_log', array(__NAMESPACE__ . '\\Pages\AdminLog', 'render'));
-            add_submenu_page('wpsynchro_menu', __('Setup', 'moon114textdomain'), __('Setup', 'moon114textdomain'), 'manage_options', 'wpsynchro_setup', array(__NAMESPACE__ . '\\Pages\AdminSetup', 'render'));
-            add_submenu_page('wpsynchro_menu', __('Support', 'moon114textdomain'), __('Support', 'moon114textdomain'), 'manage_options', 'wpsynchro_support', array(__NAMESPACE__ . '\\Pages\AdminSupport', 'render'));
+            add_submenu_page('wpsynchro_menu', __('Overview', 'wpsynchro'), __('Overview', 'wpsynchro'), 'manage_options', 'wpsynchro_overview', array(__NAMESPACE__ . '\\Pages\AdminOverview', 'render'));
+            add_submenu_page('wpsynchro_menu', __('Logs', 'wpsynchro'), __('Logs', 'wpsynchro'), 'manage_options', 'wpsynchro_log', array(__NAMESPACE__ . '\\Pages\AdminLog', 'render'));
+            add_submenu_page('wpsynchro_menu', __('Setup', 'wpsynchro'), __('Setup', 'wpsynchro'), 'manage_options', 'wpsynchro_setup', array(__NAMESPACE__ . '\\Pages\AdminSetup', 'render'));
+            add_submenu_page('wpsynchro_menu', __('Support', 'wpsynchro'), __('Support', 'wpsynchro'), 'manage_options', 'wpsynchro_support', array(__NAMESPACE__ . '\\Pages\AdminSupport', 'render'));
             if (\WPSynchro\CommonFunctions::isPremiumVersion()) {
-                add_submenu_page('wpsynchro_menu', __('Licensing', 'moon114textdomain'), __('Licensing', 'moon114textdomain'), 'manage_options', 'wpsynchro_licensing', array(__NAMESPACE__ . '\\Pages\AdminLicensing', 'render'));
+                add_submenu_page('wpsynchro_menu', __('Licensing', 'wpsynchro'), __('Licensing', 'wpsynchro'), 'manage_options', 'wpsynchro_licensing', array(__NAMESPACE__ . '\\Pages\AdminLicensing', 'render'));
             }
 
             // Run installation page (not in menu)
@@ -168,7 +168,7 @@ class WPSynchroBootstrap
         // Admin scripts
         add_action('admin_enqueue_scripts', function ($hook) {
 
-            if (strpos($hook, 'moon114textdomain') > -1) {
+            if (strpos($hook, 'wpsynchro') > -1) {
                 global $wpsynchro_container;
                 $commonfunctions = $wpsynchro_container->get("class.CommonFunctions");
 
@@ -201,7 +201,7 @@ class WPSynchroBootstrap
 
         // Admin styles
         add_action('admin_enqueue_scripts', function($hook) {
-            if (strpos($hook, 'moon114textdomain') > -1) {
+            if (strpos($hook, 'wpsynchro') > -1) {
                 global $wpsynchro_container;
                 $commonfunctions = $wpsynchro_container->get("class.CommonFunctions");
                 wp_enqueue_style('wpsynchro_admin_css', $commonfunctions->getAssetUrl("main.css"), array(), WPSYNCHRO_VERSION);
