@@ -66,16 +66,16 @@ class SynchronizeStatus
 
         // Database sync
         if (isset($this->installation->sync_database) && $this->installation->sync_database) {
-            $this->stages[] = $this->createSynchronizationStage("databasesync", __('Synchronize database', 'moon114textdomain'), __("Synchronize the database, moving the database table rows to the target", "wpsynchro"));
+            $this->stages[] = $this->createSynchronizationStage("databasesync", __('Synchronize database', 'wpsynchro'), __("Synchronize the database, moving the database table rows to the target", "wpsynchro"));
         }
 
         // Files sync
         if (isset($this->installation->sync_files) && $this->installation->sync_files) {
-            $this->stages[] = $this->createSynchronizationStage("filessync", __('Synchronize files', 'moon114textdomain'), __("Synchronize the files, by comparing and transferring the missing files", "wpsynchro"));
+            $this->stages[] = $this->createSynchronizationStage("filessync", __('Synchronize files', 'wpsynchro'), __("Synchronize the files, by comparing and transferring the missing files", "wpsynchro"));
         }
 
         // Finalize
-        $this->stages[] = $this->createSynchronizationStage("finalize", __('Finalizing', 'moon114textdomain'), __("Completes the synchronization by doing the last few steps and cleaning up", "wpsynchro"));
+        $this->stages[] = $this->createSynchronizationStage("finalize", __('Finalizing', 'wpsynchro'), __("Completes the synchronization by doing the last few steps and cleaning up", "wpsynchro"));
     }
 
     /**

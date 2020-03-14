@@ -31,9 +31,9 @@ class AdminOverviewTable extends \WP_List_Table
         $actions = array();
         $actions['duplicate'] = sprintf("<a href='%s'>%s</a>", $duplicatelink, __("Duplicate", "wpsynchro"));
         if (\WPSynchro\CommonFunctions::isPremiumVersion()) {
-            $actions['schedule'] = "<schedule-job name='" . htmlspecialchars($item->name) . "' id='" . $item->id . "'>" . __('Schedule', 'moon114textdomain') . "</schedule-job>";
+            $actions['schedule'] = "<schedule-job name='" . htmlspecialchars($item->name) . "' id='" . $item->id . "'>" . __('Schedule', 'wpsynchro') . "</schedule-job>";
         }
-        $actions['delete'] = sprintf("<a href='%s' onclick='return confirm(\"" . __('%s', 'moon114textdomain') . "\"); '>%s</a>", $deletelink, __("Are you sure you want to delete this?", "wpsynchro"), __("Delete", "wpsynchro"));
+        $actions['delete'] = sprintf("<a href='%s' onclick='return confirm(\"" . __('%s', 'wpsynchro') . "\"); '>%s</a>", $deletelink, __("Are you sure you want to delete this?", "wpsynchro"), __("Delete", "wpsynchro"));
 
         $name = "<a href='" . $editlink . "'>" . htmlspecialchars($item->name) . '</a>';
 
@@ -53,7 +53,7 @@ class AdminOverviewTable extends \WP_List_Table
     function column_location($item)
     {
 
-        return __('Local installation', 'moon114textdomain');
+        return __('Local installation', 'wpsynchro');
     }
 
     function column_synchronizes($item)
@@ -61,10 +61,10 @@ class AdminOverviewTable extends \WP_List_Table
         $synchronized_text = '';
 
         if ($item->sync_database) {
-            $synchronized_text .= __('Database', 'moon114textdomain');
+            $synchronized_text .= __('Database', 'wpsynchro');
         }
         if ($item->sync_files) {
-            $synchronized_text .= __('Files', 'moon114textdomain');
+            $synchronized_text .= __('Files', 'wpsynchro');
         }
         return $synchronized_text;
     }
@@ -82,9 +82,9 @@ class AdminOverviewTable extends \WP_List_Table
 
         if ($item->canRun()) {
             $runlink = add_query_arg(array('syncid' => $item->id), menu_page_url('wpsynchro_run', false));
-            $actions .= "<a class='button runsyncjob' href='" . $runlink . "'>" . __('Run now', 'moon114textdomain') . '</a>';
+            $actions .= "<a class='button runsyncjob' href='" . $runlink . "'>" . __('Run now', 'wpsynchro') . '</a>';
         } else {
-            $actions .= "<a class='button runsyncjob' style='cursor:not-allowed;' title='" . __('Installation can not be run - See description', 'moon114textdomain') . "' href='#' disabled>" . __('Run now', 'moon114textdomain') . '</a>';
+            $actions .= "<a class='button runsyncjob' style='cursor:not-allowed;' title='" . __('Installation can not be run - See description', 'wpsynchro') . "' href='#' disabled>" . __('Run now', 'wpsynchro') . '</a>';
         }
 
         return $actions;
@@ -93,10 +93,10 @@ class AdminOverviewTable extends \WP_List_Table
     function get_columns()
     {
         $columns = array(
-            'name' => __('Name', 'moon114textdomain'),
-            'type' => __('Type', 'moon114textdomain'),
-            'description' => __('Description', 'moon114textdomain'),
-            'actions' => __('Actions', 'moon114textdomain'),
+            'name' => __('Name', 'wpsynchro'),
+            'type' => __('Type', 'wpsynchro'),
+            'description' => __('Description', 'wpsynchro'),
+            'actions' => __('Actions', 'wpsynchro'),
         );
         return $columns;
     }
@@ -114,7 +114,7 @@ class AdminOverviewTable extends \WP_List_Table
         // All link
         $class = ( $current == 'all' ? ' class="current"' : '' );
         $all_url = remove_query_arg('type');
-        $views['all'] = "<a href='{$all_url }' {$class} >" . __('ALL TYPES', 'moon114textdomain') . '</a>';
+        $views['all'] = "<a href='{$all_url }' {$class} >" . __('ALL TYPES', 'wpsynchro') . '</a>';
 
         global $wpsynchro_container;
         $installation_class = $wpsynchro_container->get('class.Installation');

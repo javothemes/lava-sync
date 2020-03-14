@@ -33,12 +33,12 @@ class AdminRunSync
         }
 
         if (strlen($id) < 1) {
-            echo "<div class='notice'><p>" . __('No syncid provided - This should not happen', 'moon114textdomain') . '</p></div>';
+            echo "<div class='notice'><p>" . __('No syncid provided - This should not happen', 'wpsynchro') . '</p></div>';
             return;
         }
 
         if (strlen($jobid) < 1) {
-            echo "<div class='notice'><p>" . __('No jobid provided - This should not happen', 'moon114textdomain') . '</p></div>';
+            echo "<div class='notice'><p>" . __('No jobid provided - This should not happen', 'wpsynchro') . '</p></div>';
             return;
         }
 
@@ -46,7 +46,7 @@ class AdminRunSync
         $inst_factory = $wpsynchro_container->get('class.InstallationFactory');
         $jobid = $inst_factory->startInstallationSync($id, $jobid);
         if ($jobid == null) {
-            echo "<div class='notice'><p>" . __('Installation not found - This should not happen', 'moon114textdomain') . '</p></div>';
+            echo "<div class='notice'><p>" . __('Installation not found - This should not happen', 'wpsynchro') . '</p></div>';
             return;
         }
 
@@ -70,25 +70,25 @@ class AdminRunSync
 
         ?>
         <div id="wpsynchro-run-sync" class="wrap" v-cloak>
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Run synchronization', 'moon114textdomain'); ?> <div v-if="overall_spinner" class="spinner"></div></h2>
+            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Run synchronization', 'wpsynchro'); ?> <div v-if="overall_spinner" class="spinner"></div></h2>
 
             <div class="runsync-container">
                 <div class="syncsection">
                     <div v-if="!is_completed && sync_errors.length == 0" class="syncnotice">
-                        <?php _e('Do not navigate away from this page until synchronization is completed - It may break your installation', 'moon114textdomain'); ?>
+                        <?php _e('Do not navigate away from this page until synchronization is completed - It may break your installation', 'wpsynchro'); ?>
                     </div>
 
                     <div v-if="is_completed && sync_errors.length == 0"  class="synccompleted">
                         <div class="iconpart">&#10003;</div>   
                         <div>
-                            <p><?php _e('Synchronization completed', 'moon114textdomain'); ?></p>
+                            <p><?php _e('Synchronization completed', 'wpsynchro'); ?></p>
                         </div>
                     </div>
 
                     <div v-if="sync_errors.length > 0 " class="syncerrors">
                         <div class="iconpart">&#9940;</div>   
                         <div>
-                            <p><b>{{ sync_errors.length }} <?php echo strtoupper(__('Error(s) during synchronization:', 'moon114textdomain')); ?></b></p>
+                            <p><b>{{ sync_errors.length }} <?php echo strtoupper(__('Error(s) during synchronization:', 'wpsynchro')); ?></b></p>
                             <ul>
                                 <li v-for="error in sync_errors">{{error}}</li>
                             </ul>    
@@ -98,7 +98,7 @@ class AdminRunSync
                     <div v-if="sync_warnings.length > 0" class="syncwarnings">
                         <div class="iconpart">&#9888;</div>           
                         <div>
-                            <p><b>{{ sync_warnings.length }} <?php _e('WARNING(S) (synchronization will continue):', 'moon114textdomain'); ?></b></p>
+                            <p><b>{{ sync_warnings.length }} <?php _e('WARNING(S) (synchronization will continue):', 'wpsynchro'); ?></b></p>
                             <ul>
                                 <li v-for="warning in sync_warnings">{{warning}}</li>
                             </ul>
@@ -106,11 +106,11 @@ class AdminRunSync
                     </div>
 
                     <div class="">
-                        <p><?php _e('Time elapsed', 'moon114textdomain'); ?>: <span>{{ time_from_start.hours }}</span> <?php _e('Hours', 'moon114textdomain'); ?> <span>{{ time_from_start.minutes }}</span> <?php _e('Minutes', 'moon114textdomain'); ?> <span>{{ time_from_start.seconds }}</span> <?php _e('Seconds', 'moon114textdomain'); ?></p>
+                        <p><?php _e('Time elapsed', 'wpsynchro'); ?>: <span>{{ time_from_start.hours }}</span> <?php _e('Hours', 'wpsynchro'); ?> <span>{{ time_from_start.minutes }}</span> <?php _e('Minutes', 'wpsynchro'); ?> <span>{{ time_from_start.seconds }}</span> <?php _e('Seconds', 'wpsynchro'); ?></p>
                     </div>
 
                     <div v-for="(stage, index) in stages">
-                        <h3><?php _e('Stage', 'moon114textdomain'); ?> {{ index+1 }} - {{ stage.title }} <span v-if="stage.help_text.length > 0" v-bind:title="stage.help_text"  class="stagehelp dashicons dashicons-editor-help"></span> ({{ stage.percent_complete }}%) <span class="stagedata" v-if="stage.status_text.length > 0">{{ stage.status_text }}</span></h3>
+                        <h3><?php _e('Stage', 'wpsynchro'); ?> {{ index+1 }} - {{ stage.title }} <span v-if="stage.help_text.length > 0" v-bind:title="stage.help_text"  class="stagehelp dashicons dashicons-editor-help"></span> ({{ stage.percent_complete }}%) <span class="stagedata" v-if="stage.status_text.length > 0">{{ stage.status_text }}</span></h3>
                         <b-progress v-bind:value="stage.percent_complete" v-bind:max="100" ></b-progress>
                     </div>
 
