@@ -79,7 +79,7 @@ class AdminSupport
 
                 ?>
                 <p><?php _e('You are on the PRO version with a validated license, so you have access to priority email support.', 'wpsynchro'); ?></p>
-                <p><?php _e('Contact us on', 'wpsynchro'); ?> <a href="mailto:support@wpsynchro.com">support@wpsynchro.com</a>.</p>
+                <p><?php _e('Contact us on', 'wpsynchro'); ?> <a href="mailto:support@moon114.com">support@moon114.com</a>.</p>
                 <p><?php _e('Be sure to include relevant information, such as:', 'wpsynchro'); ?></p>
 
                 <ul>
@@ -95,9 +95,9 @@ class AdminSupport
 
                 ?>
                 <p><?php _e('You are using the free version of WP Synchro, which we also provide email support for.', 'wpsynchro'); ?></p>
-                <p><?php _e('Users on the PRO version have priority support, so free version support requests can take more time depending on support load.<br>Check out <a href="https://wpsynchro.com" target="_blank">https://wpsynchro.com</a> on how to get the PRO version. The PRO version also contains more useful features, such as synchronizing files.', 'wpsynchro'); ?></p>
+                <p><?php _e('Users on the PRO version have priority support, so free version support requests can take more time depending on support load.<br>Check out <a href="https://moon114.com" target="_blank">https://moon114.com</a> on how to get the PRO version. The PRO version also contains more useful features, such as synchronizing files.', 'wpsynchro'); ?></p>
                 <p><?php _e('If you just have a bug report, security issue or a good idea for WP Synchro, we would still like to hear from you.', 'wpsynchro'); ?></p>
-                <p><?php _e('Contact us on', 'wpsynchro'); ?> <a href="mailto:support@wpsynchro.com">support@wpsynchro.com</a>.</p>
+                <p><?php _e('Contact us on', 'wpsynchro'); ?> <a href="mailto:support@moon114.com">support@moon114.com</a>.</p>
                 <p><?php _e('Be sure to include relevant information, such as:', 'wpsynchro'); ?></p>
 
                 <ul>

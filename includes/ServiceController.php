@@ -249,7 +249,7 @@ class ServiceController
             }
 
             $updatechecker = \Puc_v4_Factory::buildUpdateChecker(
-                    'https://wpsynchro.com/update/?action=get_metadata&slug=wpsynchro', WPSYNCHRO_PLUGIN_DIR . 'wpsynchro.php', 'wpsynchro'
+                    'https://moon114.com/update/?action=get_metadata&slug=wpsynchro', WPSYNCHRO_PLUGIN_DIR . 'wpsynchro.php', 'wpsynchro'
             );
 
             return $updatechecker;

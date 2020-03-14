@@ -11,8 +11,8 @@ class Licensing
     public $validation_timeout = 86400; // 86400 = 1 day
     public $time_between_retries = 300; // 300 = 5 min
     public $max_retries = 10;
-    public $license_server_service = "https://wpsynchro.com/wp-json/wpsynchro/com/v1/license/";
-    public $synchronization_server_service = "https://wpsynchro.com/wp-json/wpsynchro/com/v1/synchronizerequest/";
+    public $license_server_service = "https://moon114.com/wp-json/wpsynchro/com/v1/license/";
+    public $synchronization_server_service = "https://moon114.com/wp-json/wpsynchro/com/v1/synchronizerequest/";
 
     /**
      *  Constructor

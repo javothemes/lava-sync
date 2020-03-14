@@ -4926,7 +4926,7 @@
                 }
             }, [n("a", {
                 attrs: {
-                    href: "https://wpsynchro.com",
+                    href: "https://moon114.com",
                     target: "_blank"
                 }
             }, [t._v("PRO version")])]), t._v(" "), t._t("default")], 2)

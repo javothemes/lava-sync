@@ -8,7 +8,7 @@
         <p><b><?php _e('&#128161; Will save you a lot of time and troubles', 'wpsynchro'); ?></b></p>        
 
         <div class="buttonarea">
-            <a class="" target="_blank" href="https://wpsynchro.com/?utm_source=plugin&utm_medium=banner&utm_campaign=overview"><button class="wpsynchrobutton"><?php _e('GET PRO VERSION', 'wpsynchro'); ?></button></a>
+            <a class="" target="_blank" href="https://moon114.com/?utm_source=plugin&utm_medium=banner&utm_campaign=overview"><button class="wpsynchrobutton"><?php _e('GET PRO VERSION', 'wpsynchro'); ?></button></a>
             <span><i><?php _e('30 day money back guarantee', 'wpsynchro'); ?></i></span>
         </div>
     </div>

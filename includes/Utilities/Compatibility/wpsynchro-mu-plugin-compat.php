@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: WP Synchro MU plugin
- * Plugin URI:  wpsynchro.com
+ * Plugin URI:  moon114.com
  * Description: Optimizing site compatibility and speed for WP Synchro specific operations
  * Author:      WP Synchro
- * Author URI:  wpsynchro.com
+ * Author URI:  moon114.com
  * Version:     1.0.3
  */
 define('WPSYNCHRO_MU_COMPATIBILITY_VERSION', '1.0.3');

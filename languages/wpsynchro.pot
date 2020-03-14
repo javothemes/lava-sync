@@ -746,7 +746,7 @@ msgid ""
 "synchronize all files. To prevent problems, make sure each site has its own "
 "location with no other sites inside. Database synchronization will work "
 "without problems. For more information, see the documentation on sub "
-"directory sites on wpsynchro.com"
+"directory sites on moon114.com"
 msgstr ""
 
 #: D:/development/wp-synchro/plugin/wpsynchro/includes/Pages/AdminAddEdit.php:77
@@ -1386,8 +1386,8 @@ msgstr ""
 #: D:/development/wp-synchro/plugin/wpsynchro/includes/Pages/AdminLicensing.php:63
 #: D:/development/wp-synchro/plugin/wpsynchro/build/includes/Pages/AdminLicensing.php:63
 msgid ""
-"Your license key can be found on <a href=\"https://wpsynchro.com\" "
-"target=\"_blank\">https://wpsynchro.com</a> on My Account after login in "
+"Your license key can be found on <a href=\"https://moon114.com\" "
+"target=\"_blank\">https://moon114.com</a> on My Account after login in "
 "with your credentials."
 msgstr ""
 
@@ -1434,7 +1434,7 @@ msgstr ""
 #: D:/development/wp-synchro/plugin/wpsynchro/build/includes/Pages/AdminLicensing.php:86
 msgid ""
 "Make sure it is possible to connect out of this webserver to license server "
-"at wpsynchro.com."
+"at moon114.com."
 msgstr ""
 
 #: D:/development/wp-synchro/plugin/wpsynchro/includes/Pages/AdminLicensing.php:91
@@ -1959,7 +1959,7 @@ msgstr ""
 msgid ""
 "Users on the PRO version have priority support, so free version support "
 "requests can take more time depending on support load.<br>Check out <a "
-"href=\"https://wpsynchro.com\" target=\"_blank\">https://wpsynchro.com</a> "
+"href=\"https://moon114.com\" target=\"_blank\">https://moon114.com</a> "
 "on how to get the PRO version. The PRO version also contains more useful "
 "features, such as synchronizing files."
 msgstr ""
@@ -2376,7 +2376,7 @@ msgid ""
 msgstr ""
 
 #. URI of the plugin
-msgid "https://wpsynchro.com/home"
+msgid "https://moon114.com/home"
 msgstr ""
 
 #. Author of the plugin
@@ -2384,5 +2384,5 @@ msgid "WPSynchro"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://wpsynchro.com"
+msgid "https://moon114.com"
 msgstr ""

@@ -1,11 +1,11 @@
 <?php
 /*
   Plugin Name: Lava Sync
-  Plugin URI: https://wpsynchro.com/home
+  Plugin URI: https://moon114.com/home
   Description: Complete migration plugin for WordPress - Synchronization of database and files made easy.
   Version: 0.0.0.1
   Author: WPSynchro
-  Author URI: https://wpsynchro.com
+  Author URI: https://moon114.com
   Domain Path: /languages/
   Text Domain: wpsynchro
   License: GPLv3
@@ -13,7 +13,7 @@
  */
 
 /**
- * 	Copyright (C) 2018 WPSynchro (email: support@wpsynchro.com)
+ * 	Copyright (C) 2018 WPSynchro (email: support@moon114.com)
  *
  * 	This program is free software; you can redistribute it and/or
  * 	modify it under the terms of the GNU General Public License

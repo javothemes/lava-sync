@@ -60,7 +60,7 @@ class AdminLicensing
 
 
             <div class="sectionheader"><span class="dashicons dashicons-shield-alt"></span> <?php _e('Your license', 'wpsynchro'); ?></div>
-            <p><?php _e('Your license key can be found on <a href="https://wpsynchro.com" target="_blank">https://wpsynchro.com</a> on My Account after login in with your credentials.', 'wpsynchro'); ?><br><?php _e('The license key will be validated against license server and will be revalidated every day automatically.', 'wpsynchro'); ?></p>
+            <p><?php _e('Your license key can be found on <a href="https://moon114.com" target="_blank">https://moon114.com</a> on My Account after login in with your credentials.', 'wpsynchro'); ?><br><?php _e('The license key will be validated against license server and will be revalidated every day automatically.', 'wpsynchro'); ?></p>
 
             <?php
             echo '<b>' . __('Currently used license key', 'wpsynchro') . ':</b> ';
@@ -83,7 +83,7 @@ class AdminLicensing
                     ?>
                     <p><b><?php echo sprintf(__("License is in a unknown state - We are retrying to contact license server to determine state - Attempt %d of %d", "wpsynchro"), $licensing_details->retries, 10) ?></b></p>
                     <p><b><?php echo sprintf(__("Last retry was %s minutes ago and we will retry with ~%d min intervals up to %d attempts.", "wpsynchro"), $diff_last_retry_mins, floor($licensing->time_between_retries / 60), $licensing->max_retries) ?></b></p>
-                    <p><?php _e('Make sure it is possible to connect out of this webserver to license server at wpsynchro.com.', 'wpsynchro'); ?></p>
+                    <p><?php _e('Make sure it is possible to connect out of this webserver to license server at moon114.com.', 'wpsynchro'); ?></p>
                     <?php
                 } else if ($licensing_details->status === true) {
 
