@@ -3,11 +3,11 @@
   Plugin Name: Lava Sync
   Plugin URI: https://moon114.com/home
   Description: Complete migration plugin for WordPress - Synchronization of database and files made easy.
-  Version: 0.0.0.2
+  Version: 0.0.0.1
   Author: WPSynchro
   Author URI: https://moon114.com
   Domain Path: /languages/
-  Text Domain: wpsynchro
+  Text Domain: moon114textdomain
   License: GPLv3
   License URI: http://www.gnu.org/licenses/gpl-3.0
  */
@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
     exit;
 } // Exit if accessed directly
 
-define('WPSYNCHRO_VERSION', '0.0.0.2');
+define('WPSYNCHRO_VERSION', '0.0.0.1');
 define('WPSYNCHRO_DB_VERSION', '4');
 define('WPSYNCHRO_NEWEST_MU_COMPATIBILITY_VERSION', '1.0.3');
 
