@@ -270,7 +270,7 @@ class PopulateListHandler
             $wpcontent_basename = basename($this->job->to_files_wp_content_dir);
         }
 
-        $exclusion_arr[] = $wpcontent_basename . "/" . $plugin_basename . "/wpsynchro";
+        $exclusion_arr[] = $wpcontent_basename . "/" . $plugin_basename . "/lava-sync";
 
         // Add uploads location
         if ($type == "source") {
@@ -279,7 +279,7 @@ class PopulateListHandler
             $uploads_basename = basename($this->job->to_files_uploads_dir);
         }
 
-        $exclusion_arr[] = $wpcontent_basename . "/" . $uploads_basename . "/wpsynchro";
+        $exclusion_arr[] = $wpcontent_basename . "/" . $uploads_basename . "/lava-sync";
 
         // Add .htaccess in web root, to prevent troubles with https redirects and other stuff
         if ($type == "source") {

@@ -94,7 +94,7 @@ class HealthCheck
             $initiate_server_okay = false;
 
             // Check that initiate url response is well
-            $initiate_url = get_home_url(null, "wp-json/wpsynchro/v1/initiate?type=local");
+            $initiate_url = get_home_url(null, "wp-json/lava-sync/v1/initiate?type=local");
             $args = array(
                 'method' => 'POST',
                 'timeout' => 30,
@@ -129,7 +129,7 @@ class HealthCheck
             if ($initiate_server_okay) {
                 // Check masterdata url
                 $localtransfertoken = $commonfunctions->getLocalTransferToken();
-                $masterdata_url = get_home_url(null, "wp-json/wpsynchro/v1/masterdata/?type[]=dbtables&token=" . $localtransfertoken);
+                $masterdata_url = get_home_url(null, "wp-json/lava-sync/v1/masterdata/?type[]=dbtables&token=" . $localtransfertoken);
                 $args = array(
                     'method' => 'POST',
                     'timeout' => 30,

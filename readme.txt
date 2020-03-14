@@ -1,6 +1,6 @@
 === WP Synchro - Migrate WordPress database and files ===
 Contributors: wpsynchro
-Donate link: https://wpsynchro.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=donate
+Donate link: https://lava-sync.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=donate
 Tags: migrate,database,files,media,migration,synchronize,db,export,mysql,move,staging,localhost,local,transfer
 Requires at least: 4.7
 Tested up to: 5.3
@@ -37,7 +37,7 @@ Automating the repetitive task of migrating sites, such as keeping a local devel
 *   Database backup before migration
 *   WP CLI command to schedule synchronizations via cron or other trigger
 *   Pretty much the ultimate tool for doing WordPress migrations
-*   14 day trial is waiting for you to get started at [WPSynchro.com](https://wpsynchro.com/ "WP Synchro PRO")
+*   14 day trial is waiting for you to get started at [WPSynchro.com](https://lava-sync.com/ "WP Synchro PRO")
 
 **Typical use for WP Synchro:**
 
@@ -48,14 +48,14 @@ Automating the repetitive task of migrating sites, such as keeping a local devel
 **WP Synchro PRO version:**
 
 Pro version gives you more features, such as synchronizing files, database backup, WP CLI command and much faster support.
-Check out how to get PRO version at [WPSynchro.com](https://wpsynchro.com/ "WP Synchro PRO")
+Check out how to get PRO version at [WPSynchro.com](https://lava-sync.com/ "WP Synchro PRO")
 We have a 14 day trial waiting for you and 30 day money back guarantee. So why not try the PRO version?
 
 == Installation ==
 
 **Here is how you get started:**
 
-1. Upload the plugin files to the `/wp-content/plugins/wpsynchro` directory, or install the plugin through the WordPress plugins screen directly
+1. Upload the plugin files to the `/wp-content/plugins/lava-sync` directory, or install the plugin through the WordPress plugins screen directly
 1. Make sure to install the plugin on all the WordPress installations (it is needed on both ends of the synchronizing)
 1. Activate the plugin through the 'Plugins' screen in WordPress
 1. Choose if data can be overwritten or be downloaded from installation in menu WP Synchro->Setup
@@ -69,7 +69,7 @@ We have a 14 day trial waiting for you and 30 day money back guarantee. So why n
 = Do you offer support? =
 
 Yes we do, for both free and PRO version. But PRO version users always get priority support, so support requests for the free version will normally take some time.
-Check out how to get PRO version at [WPSynchro.com](https://wpsynchro.com/ "WP Synchro site")
+Check out how to get PRO version at [WPSynchro.com](https://lava-sync.com/ "WP Synchro site")
 
 You can contact us at <support@wpsynchro.com> for support. Also check out the "Support" menu in WP Synchro, that provides information needed for the support request.
 

@@ -16,8 +16,8 @@ class WPSynchroBootstrap
      */
     public function __construct()
     {
-        define('WPSYNCHRO_PLUGIN_DIR', WP_PLUGIN_DIR . '/wpsynchro/');
-        define('WPSYNCHRO_PLUGIN_URL', trailingslashit(plugins_url('/wpsynchro')));
+        define('WPSYNCHRO_PLUGIN_DIR', WP_PLUGIN_DIR . '/lava-sync/');
+        define('WPSYNCHRO_PLUGIN_URL', trailingslashit(plugins_url('/lava-sync')));
     }
 
     /**
