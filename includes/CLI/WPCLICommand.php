@@ -39,7 +39,7 @@ class WPCLICommand
 
         $installation = $installationfactory->retrieveInstallation($instid);
         if (!$installation) {
-            \WP_CLI::error(sprintf(__('Installation id "%s" could not be found. Make sure it is identical to the one found on the overview page in WP Synchro.', 'wpsynchro'), $instid));
+            \WP_CLI::error(sprintf(__('Installation id "%s" could not be found. Make sure it is identical to the one found on the overview page in WP Synchro.', 'moon114textdomain'), $instid));
         }
 
         /**
@@ -49,7 +49,7 @@ class WPCLICommand
         $round = 0;
 
         // Run synchronization
-        \WP_CLI::log(__('Starting synchronization...', 'wpsynchro'));
+        \WP_CLI::log(__('Starting synchronization...', 'moon114textdomain'));
 
         while ($round < $max_rounds) {
             $sync = $wpsynchro_container->get('class.SynchronizeController');
@@ -72,6 +72,6 @@ class WPCLICommand
         }
 
 
-        \WP_CLI::success(__('Synchronization has completed without errors', 'wpsynchro'));
+        \WP_CLI::success(__('Synchronization has completed without errors', 'moon114textdomain'));
     }
 }

@@ -58,73 +58,73 @@ class AdminSupport
 
         ?>
         <div id="wpsynchro-support" class="wrap">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Support', 'wpsynchro'); ?></h2>
+            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Support', 'moon114textdomain'); ?></h2>
 
             <?php
             if ($this->show_delete_settings_notice) {
 
                 ?>
                 <div class="notice notice-success">
-                    <p><?php _e('WP Synchro data clean up completed - It is nice and clean now', 'wpsynchro'); ?></p>
+                    <p><?php _e('WP Synchro data clean up completed - It is nice and clean now', 'moon114textdomain'); ?></p>
                 </div>
                 <?php
             }
 
             ?>
 
-            <p><?php _e('Here is how you get help on a support issue for WP Synchro.', 'wpsynchro'); ?></p>
-            <div class="sectionheader"><span class="dashicons dashicons-lightbulb"></span> <?php _e('Getting support', 'wpsynchro'); ?></div>
+            <p><?php _e('Here is how you get help on a support issue for WP Synchro.', 'moon114textdomain'); ?></p>
+            <div class="sectionheader"><span class="dashicons dashicons-lightbulb"></span> <?php _e('Getting support', 'moon114textdomain'); ?></div>
             <?php
             if (\WPSynchro\CommonFunctions::isPremiumVersion() && $licensing->verifyLicense()) {
 
                 ?>
-                <p><?php _e('You are on the PRO version with a validated license, so you have access to priority email support.', 'wpsynchro'); ?></p>
-                <p><?php _e('Contact us on', 'wpsynchro'); ?> <a href="mailto:support@moon114.com">support@moon114.com</a>.</p>
-                <p><?php _e('Be sure to include relevant information, such as:', 'wpsynchro'); ?></p>
+                <p><?php _e('You are on the PRO version with a validated license, so you have access to priority email support.', 'moon114textdomain'); ?></p>
+                <p><?php _e('Contact us on', 'moon114textdomain'); ?> <a href="mailto:support@moon114.com">support@moon114.com</a>.</p>
+                <p><?php _e('Be sure to include relevant information, such as:', 'moon114textdomain'); ?></p>
 
                 <ul>
-                    <li> - <?php _e('Description of problem(s)', 'wpsynchro'); ?></li>
-                    <li> - <?php _e('Screenshot of problem(s)', 'wpsynchro'); ?></li>
-                    <li> - <?php _e('Result of Health check just below', 'wpsynchro'); ?></li>
-                    <li> - <?php _e('Log file from synchronization (found in menu "Logs") with debug enabled (found in menu "Setup")', 'wpsynchro'); ?></li>                    
+                    <li> - <?php _e('Description of problem(s)', 'moon114textdomain'); ?></li>
+                    <li> - <?php _e('Screenshot of problem(s)', 'moon114textdomain'); ?></li>
+                    <li> - <?php _e('Result of Health check just below', 'moon114textdomain'); ?></li>
+                    <li> - <?php _e('Log file from synchronization (found in menu "Logs") with debug enabled (found in menu "Setup")', 'moon114textdomain'); ?></li>                    
                 </ul>
-                <p><?php _e('We will then get back to you as soon as we have investigated and we will ask for further information if needed.', 'wpsynchro'); ?></p>
+                <p><?php _e('We will then get back to you as soon as we have investigated and we will ask for further information if needed.', 'moon114textdomain'); ?></p>
 
                 <?php
             } else {
 
                 ?>
-                <p><?php _e('You are using the free version of WP Synchro, which we also provide email support for.', 'wpsynchro'); ?></p>
-                <p><?php _e('Users on the PRO version have priority support, so free version support requests can take more time depending on support load.<br>Check out <a href="https://moon114.com" target="_blank">https://moon114.com</a> on how to get the PRO version. The PRO version also contains more useful features, such as synchronizing files.', 'wpsynchro'); ?></p>
-                <p><?php _e('If you just have a bug report, security issue or a good idea for WP Synchro, we would still like to hear from you.', 'wpsynchro'); ?></p>
-                <p><?php _e('Contact us on', 'wpsynchro'); ?> <a href="mailto:support@moon114.com">support@moon114.com</a>.</p>
-                <p><?php _e('Be sure to include relevant information, such as:', 'wpsynchro'); ?></p>
+                <p><?php _e('You are using the free version of WP Synchro, which we also provide email support for.', 'moon114textdomain'); ?></p>
+                <p><?php _e('Users on the PRO version have priority support, so free version support requests can take more time depending on support load.<br>Check out <a href="https://moon114.com" target="_blank">https://moon114.com</a> on how to get the PRO version. The PRO version also contains more useful features, such as synchronizing files.', 'moon114textdomain'); ?></p>
+                <p><?php _e('If you just have a bug report, security issue or a good idea for WP Synchro, we would still like to hear from you.', 'moon114textdomain'); ?></p>
+                <p><?php _e('Contact us on', 'moon114textdomain'); ?> <a href="mailto:support@moon114.com">support@moon114.com</a>.</p>
+                <p><?php _e('Be sure to include relevant information, such as:', 'moon114textdomain'); ?></p>
 
                 <ul>
-                    <li> - <?php _e('Description of problem(s)', 'wpsynchro'); ?></li>
-                    <li> - <?php _e('Screenshot of problem(s)', 'wpsynchro'); ?></li>
-                    <li> - <?php _e('Result of Health check just below', 'wpsynchro'); ?></li>
-                    <li> - <?php _e('Log file from synchronization (found in menu "Logs")', 'wpsynchro'); ?></li>                    
+                    <li> - <?php _e('Description of problem(s)', 'moon114textdomain'); ?></li>
+                    <li> - <?php _e('Screenshot of problem(s)', 'moon114textdomain'); ?></li>
+                    <li> - <?php _e('Result of Health check just below', 'moon114textdomain'); ?></li>
+                    <li> - <?php _e('Log file from synchronization (found in menu "Logs")', 'moon114textdomain'); ?></li>                    
                 </ul>
                 <?php
             }
 
             ?>              
 
-            <div class="sectionheader"><span class="dashicons dashicons-awards"></span> <?php _e('Health check', 'wpsynchro'); ?></div>
+            <div class="sectionheader"><span class="dashicons dashicons-awards"></span> <?php _e('Health check', 'moon114textdomain'); ?></div>
 
             <healthcheck showinline></healthcheck>
 
-            <div class="sectionheader"><span class="dashicons dashicons-admin-generic"></span> <?php _e('Debug JSON information', 'wpsynchro'); ?></div>
-            <p><?php _e('Contains debug information about the installation, such as configuration and file locations. No personal information is included.', 'wpsynchro'); ?></p>
+            <div class="sectionheader"><span class="dashicons dashicons-admin-generic"></span> <?php _e('Debug JSON information', 'moon114textdomain'); ?></div>
+            <p><?php _e('Contains debug information about the installation, such as configuration and file locations. No personal information is included.', 'moon114textdomain'); ?></p>
             <textarea class="debugjson"><?php echo $debug_json; ?></textarea>
 
-            <div class="sectionheader"><span class="dashicons dashicons-no"></span> <?php _e('Delete WP Synchro data', 'wpsynchro'); ?></div>
-            <p><?php _e('Delete all data related to WP Synchro, in database and files. Can be used to clean up after WP Synchro if needed.', 'wpsynchro'); ?><br><?php _e('Does not reset access key and license key setup, but removes data like log files and installations.', 'wpsynchro'); ?></p>
+            <div class="sectionheader"><span class="dashicons dashicons-no"></span> <?php _e('Delete WP Synchro data', 'moon114textdomain'); ?></div>
+            <p><?php _e('Delete all data related to WP Synchro, in database and files. Can be used to clean up after WP Synchro if needed.', 'moon114textdomain'); ?><br><?php _e('Does not reset access key and license key setup, but removes data like log files and installations.', 'moon114textdomain'); ?></p>
 
             <form  method="POST" >
                 <input type="hidden" name="deletesettings" value="1" />
-                <p><button type="submit" class="deletesettingsbutton" /><?php _e('Delete all WP Synchro data', 'wpsynchro'); ?></button></p>
+                <p><button type="submit" class="deletesettingsbutton" /><?php _e('Delete all WP Synchro data', 'moon114textdomain'); ?></button></p>
 
             </form>
 

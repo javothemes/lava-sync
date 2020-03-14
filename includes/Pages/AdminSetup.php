@@ -128,8 +128,8 @@ class AdminSetup
 
         ?>
         <div class="wrap wpsynchro-setup">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Setup', 'wpsynchro'); ?></h2>
-            <p><?php _e('Configure the access key used for accessing this installation from remote. Treat the access key like a password and keep it safe from others.<br>This is also where you choose what methods (pull/push) are allowed when accessing this installation from remote.', 'wpsynchro'); ?></p>
+            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Setup', 'moon114textdomain'); ?></h2>
+            <p><?php _e('Configure the access key used for accessing this installation from remote. Treat the access key like a password and keep it safe from others.<br>This is also where you choose what methods (pull/push) are allowed when accessing this installation from remote.', 'moon114textdomain'); ?></p>
 
             <?php
             if ($this->show_update_settings_notice) {
@@ -150,7 +150,7 @@ class AdminSetup
 
                     ?>
                     <div class="notice notice-success">
-                        <p><?php _e('WP Synchro settings are now updated', 'wpsynchro'); ?></p>
+                        <p><?php _e('WP Synchro settings are now updated', 'moon114textdomain'); ?></p>
                     </div>
                     <?php
                 }
@@ -159,48 +159,48 @@ class AdminSetup
             ?>
 
             <form id="wpsynchro-setup-form" method="POST" >
-                <div class="sectionheader"><span class="dashicons dashicons-admin-tools"></span> <?php _e('Configure settings', 'wpsynchro'); ?></div>
+                <div class="sectionheader"><span class="dashicons dashicons-admin-tools"></span> <?php _e('Configure settings', 'moon114textdomain'); ?></div>
                 <table class="">
                     <tr>
-                        <td><label for="name"><?php _e('Access key', 'wpsynchro'); ?></label></td>
+                        <td><label for="name"><?php _e('Access key', 'moon114textdomain'); ?></label></td>
                         <td>
                             <input type="text" name="accesskey" id="wp_synchro_accesskey" value="<?php echo $accesskey; ?>" class="regular-text ltr" readonly><br>
-                            <button id="generate_new_access_key" class="wpsynchrobutton"><?php _e('Generate new access key', 'wpsynchro'); ?></button>
+                            <button id="generate_new_access_key" class="wpsynchrobutton"><?php _e('Generate new access key', 'moon114textdomain'); ?></button>
                         </td>
                     </tr>
                     <tr><td><p></p></td><td></td></tr>
                     <tr>
-                        <td><?php _e('Allowed methods', 'wpsynchro'); ?></td>
+                        <td><?php _e('Allowed methods', 'moon114textdomain'); ?></td>
                         <td>
-                            <label><input type="checkbox" name="allow_pull" id="allow_pull" <?php echo ( $methodsallowed->pull ? ' checked ' : '' ); ?>  /> <?php _e('Allow pull - Allow this site to be downloaded', 'wpsynchro'); ?></label><br>
-                            <label><input type="checkbox" name="allow_push" id="allow_push" <?php echo ( $methodsallowed->push ? ' checked ' : '' ); ?> /> <?php _e('Allow push - Allow this site to be overwritten', 'wpsynchro'); ?></label>
+                            <label><input type="checkbox" name="allow_pull" id="allow_pull" <?php echo ( $methodsallowed->pull ? ' checked ' : '' ); ?>  /> <?php _e('Allow pull - Allow this site to be downloaded', 'moon114textdomain'); ?></label><br>
+                            <label><input type="checkbox" name="allow_push" id="allow_push" <?php echo ( $methodsallowed->push ? ' checked ' : '' ); ?> /> <?php _e('Allow push - Allow this site to be overwritten', 'moon114textdomain'); ?></label>
                         </td>
                     </tr>
                     <tr><td><p></p></td><td></td></tr>
                     <tr>
-                        <td><?php _e('Optimize compatibility', 'wpsynchro'); ?></td>
+                        <td><?php _e('Optimize compatibility', 'moon114textdomain'); ?></td>
                         <td>
-                            <label><input type="checkbox" name="enable_muplugin" id="enable_muplugin" <?php echo ( $enable_muplugin ? ' checked ' : '' ); ?>  /> <?php _e('Enable MU Plugin to optimize compatibility on WP Synchro requests (recommended)', 'wpsynchro'); ?> </label><br>                         
+                            <label><input type="checkbox" name="enable_muplugin" id="enable_muplugin" <?php echo ( $enable_muplugin ? ' checked ' : '' ); ?>  /> <?php _e('Enable MU Plugin to optimize compatibility on WP Synchro requests (recommended)', 'moon114textdomain'); ?> </label><br>                         
                         </td>
                     </tr>
                     <tr><td><p></p></td><td></td></tr>
                     <tr>
-                        <td><?php _e('Debug log', 'wpsynchro'); ?></td>
+                        <td><?php _e('Debug log', 'moon114textdomain'); ?></td>
                         <td>
-                            <label><input type="checkbox" name="enable_debuglogging" id="enable_debuglogging" <?php echo ( $enable_debuglogging ? ' checked ' : '' ); ?>  /> <?php _e('Enable debug level logging - Generates much larger log files, but needed for debugging', 'wpsynchro'); ?></label><br>                         
+                            <label><input type="checkbox" name="enable_debuglogging" id="enable_debuglogging" <?php echo ( $enable_debuglogging ? ' checked ' : '' ); ?>  /> <?php _e('Enable debug level logging - Generates much larger log files, but needed for debugging', 'moon114textdomain'); ?></label><br>                         
                         </td>
                     </tr>
                     <tr><td><p></p></td><td></td></tr>
                     <tr>
-                        <td><?php _e('IP security check', 'wpsynchro'); ?></td>
+                        <td><?php _e('IP security check', 'moon114textdomain'); ?></td>
                         <td>
-                            <label><input type="checkbox" name="enable_ip_check" id="enable_ip_check" <?php echo ( $enable_ip_check ? ' checked ' : '' ); ?>  /> <?php _e('Enable IP address security check during synchronization', 'wpsynchro'); ?></label>
-                            <span title="<?= __('Enable the IP Security check during synchronization to decrease possibility of man-in-the-middle attacks. It may give problems on some sites, mostly when using multiple servers or routing through services like CloudFlare.', 'wpsynchro') ?>" class="dashicons dashicons-editor-help"></span><br>                         
+                            <label><input type="checkbox" name="enable_ip_check" id="enable_ip_check" <?php echo ( $enable_ip_check ? ' checked ' : '' ); ?>  /> <?php _e('Enable IP address security check during synchronization', 'moon114textdomain'); ?></label>
+                            <span title="<?= __('Enable the IP Security check during synchronization to decrease possibility of man-in-the-middle attacks. It may give problems on some sites, mostly when using multiple servers or routing through services like CloudFlare.', 'moon114textdomain') ?>" class="dashicons dashicons-editor-help"></span><br>                         
                         </td>
                     </tr>
 
                 </table>
-                <p><input type="submit" value="<?php _e('Save settings', 'wpsynchro'); ?>" /></p>
+                <p><input type="submit" value="<?php _e('Save settings', 'moon114textdomain'); ?>" /></p>
 
             </form>
 
