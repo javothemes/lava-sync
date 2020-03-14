@@ -45,11 +45,11 @@ class AdminLogTable extends \WP_List_Table
     {
         $state = $item->state;
         if ($state == 'started') {
-            return __('Started', 'wpsynchro');
+            return __('Started', 'moon114textdomain');
         } else if ($state == 'completed') {
-            return __('Completed', 'wpsynchro');
+            return __('Completed', 'moon114textdomain')domain');
         } else {
-            return __('Unknown', 'wpsynchro');
+            return __('Unknown', 'moon114textdomain')domain');
         }
     }
 
@@ -66,9 +66,9 @@ class AdminLogTable extends \WP_List_Table
 
         if (file_exists($logpath . $filename)) {
             $showloglink = add_query_arg(array('showlog' => $item->job_id, 'inst' => $item->installation_id), menu_page_url('wpsynchro_log', false));
-            $downloadloglink = rest_url("wpsynchro/v1/downloadlog/?job_id=" . $item->job_id . "&inst_id=" . $item->installation_id . "&_wpnonce=" . wp_create_nonce('wp_rest'));
-            $loglinks = "<a href='" . $showloglink . "' class='button'>" . __('Show log', 'wpsynchro') . "</a>";
-            $loglinks .= " <a href='" . $downloadloglink . "' class='button'>" . __('Download log', 'wpsynchro') . "</a>";
+            $downloadloglink = rest_url("lava-sync/v1/downloadlog/?job_id=" . $item->job_id . "&inst_id=" . $item->installation_id . "&_wpnonce=" . wp_create_nonce('wp_rest'));
+            $loglinks = "<a href='" . $showloglink . "' class='button'>" . __('Show log', 'moon114textdomain')domain') . "</a>";
+            $loglinks .= " <a href='" . $downloadloglink . "' class='button'>" . __('Download log', 'moon114textdomain')domain') . "</a>";
             return $loglinks;
         } else {
             return "N/A";
@@ -78,10 +78,10 @@ class AdminLogTable extends \WP_List_Table
     function get_columns()
     {
         $columns = array(
-            'date' => __('Synchronization date', 'wpsynchro'),
-            'state' => __('Status', 'wpsynchro'),
-            'description' => __('Description', 'wpsynchro'),
-            'logfile' => __('Logfile', 'wpsynchro'),
+            'date' => __('Synchronization date', 'moon114textdomain')domain'),
+            'state' => __('Status', 'moon114textdomain')domain'),
+            'description' => __('Description', 'moon114textdomain')domain'),
+            'logfile' => __('Logfile', 'moon114textdomain')domain'),
         );
         return $columns;
     }

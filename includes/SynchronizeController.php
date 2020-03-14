@@ -73,7 +73,7 @@ class SynchronizeController
         // Handle job locking
         if (isset($this->job->run_lock) && $this->job->run_lock === true) {
             // Ohhh noes, already running
-            $errormsg = __('Job is already running or error has happened - Check PHP error logs', 'wpsynchro');
+            $errormsg = __('Job is already running or error has happened - Check PHP error logs', 'moon114textdomain');
             $result->errors[] = $errormsg;
             $this->logger->log("CRITICAL", $errormsg);
             return $result;

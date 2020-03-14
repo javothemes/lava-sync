@@ -55,19 +55,19 @@ class AdminLicensing
 
         ?>
         <div class="wrap wpsynchro-licensing">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Licensing', 'wpsynchro'); ?></h2>
-            <p><?php _e('Here you can insert your license key for your PRO version, so you can use the full functionality of WP Synchro PRO.', 'wpsynchro'); ?></p>
+            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Licensing', 'moon114textdomain'); ?></h2>
+            <p><?php _e('Here you can insert your license key for your PRO version, so you can use the full functionality of WP Synchro PRO.', 'moon114textdomain')domain'); ?></p>
 
 
-            <div class="sectionheader"><span class="dashicons dashicons-shield-alt"></span> <?php _e('Your license', 'wpsynchro'); ?></div>
-            <p><?php _e('Your license key can be found on <a href="https://moon114.com" target="_blank">https://moon114.com</a> on My Account after login in with your credentials.', 'wpsynchro'); ?><br><?php _e('The license key will be validated against license server and will be revalidated every day automatically.', 'wpsynchro'); ?></p>
+            <div class="sectionheader"><span class="dashicons dashicons-shield-alt"></span> <?php _e('Your license', 'moon114textdomain')domain'); ?></div>
+            <p><?php _e('Your license key can be found on <a href="https://moon114.com" target="_blank">https://moon114.com</a> on My Account after login in with your credentials.', 'moon114textdomain')domain'); ?><br><?php _e('The license key will be validated against license server and will be revalidated every day automatic'moon114textdomain')n114textdomain'); ?></p>
 
             <?php
-            echo '<b>' . __('Currently used license key', 'wpsynchro') . ':</b> ';
+            echo '<b>' . __('Currently used license key', 'moon114textdomain')domain') . ':</b> ';
             if (strlen($licensekey) > 10) {
-                echo sprintf(__('starts with %s and ends with %s', 'wpsynchro'), substr($licensekey, 0, 5), substr($licensekey, strlen($licensekey) - 5, 5));
+                echo sprintf(__('starts with %s and ends with %s', 'moon114textdomain')domain'), substr($licensekey, 0, 5), substr($licensekey, strlen($licensekey) - 5, 5));
             } else {
-                echo __('no license key', 'wpsynchro');
+                echo __('no license key', 'moon114textdomain')domain');
             }
 
             if ($licensing_details) {
@@ -83,7 +83,7 @@ class AdminLicensing
                     ?>
                     <p><b><?php echo sprintf(__("License is in a unknown state - We are retrying to contact license server to determine state - Attempt %d of %d", "wpsynchro"), $licensing_details->retries, 10) ?></b></p>
                     <p><b><?php echo sprintf(__("Last retry was %s minutes ago and we will retry with ~%d min intervals up to %d attempts.", "wpsynchro"), $diff_last_retry_mins, floor($licensing->time_between_retries / 60), $licensing->max_retries) ?></b></p>
-                    <p><?php _e('Make sure it is possible to connect out of this webserver to license server at moon114.com.', 'wpsynchro'); ?></p>
+                    <p><?php _e('Make sure it is possible to connect out of this webserver to license server at moon114.com.', 'moon114textdomain')domain'); ?></p>
                     <?php
                 } else if ($licensing_details->status === true) {
 
@@ -94,7 +94,7 @@ class AdminLicensing
 
                     ?>
                     <p><b><?php echo sprintf(__("License is NOT valid. Last checked %s hours ago. Change your key to a valid one or contact support if you have questions.", "wpsynchro"), $diff_hours) ?></b></p>
-                    <p><?php _e('To recheck your current key, just save the key again and it will be re-validated.', 'wpsynchro'); ?></p>
+                    <p><?php _e('To recheck your current key, just save the key again and it will be re-validated.', 'moon114textdomain')domain'); ?></p>
                     <?php
                 }
             } else {
@@ -107,27 +107,27 @@ class AdminLicensing
 
             ?>
 
-            <div class="sectionheader"><span class="dashicons dashicons-admin-network"></span> <?php _e('Change license key', 'wpsynchro'); ?></div>
+            <div class="sectionheader"><span class="dashicons dashicons-admin-network"></span> <?php _e('Change license key', 'moon114textdomain')domain'); ?></div>
             <form id="wpsynchro-licensing-form" method="POST" >
                 <table class="">
                     <tr>
-                        <td><label for="name"><?php _e('New license key', 'wpsynchro'); ?></label></td>
+                        <td><label for="name"><?php _e('New license key', 'moon114textdomain')domain'); ?></label></td>
                         <td>
                             <input type="text" name="wpsynchro_license_key" id="wpsynchro_license_key_field" value="" class="regular-text ltr" ><br>
                         </td>
                     </tr>
                 </table>
                 <p>By saving your new license key, you agree to the terms of use, outlined in section "TERMS OF USE" on this page.</p>
-                <p><input class="btn btn-primary" type="submit" value="<?php _e('Save license key and validate', 'wpsynchro'); ?>" /></p>
+                <p><input class="btn btn-primary" type="submit" value="<?php _e('Save license key and validate', 'moon114textdomain')domain'); ?>" /></p>
             </form>
 
-            <div class="sectionheader"><span class="dashicons dashicons-media-default"></span> <?php _e('Terms of use', 'wpsynchro'); ?> </div>
-            <p><?php _e('By inserting your license key and saving it, you accept that we use this information to contact WP Synchro license server.', 'wpsynchro'); ?>
-                <br><?php _e('After successful validation, the key will be revalidated every day to make sure it is still valid.', 'wpsynchro'); ?>
-                <br><?php _e('On the server, the key will be checked and request is logged, along with your public IP address and site url.', 'wpsynchro'); ?>
-                <br><?php _e('We dont save or send other information to the license server.', 'wpsynchro'); ?></p>
-            <p><?php _e('For every synchronization, the license server will be contacted to verify the license and the active sites limit for your subscription.', 'wpsynchro'); ?>
-                <br><?php _e('These requests contain only your license key and the urls of synchronization. These will be logged along with your public IP address.', 'wpsynchro'); ?></p>
+            <div class="sectionheader"><span class="dashicons dashicons-media-default"></span> <?php _e('Terms of use', 'moon114textdomain')domain'); ?> </div>
+            <p><?php _e('By inserting your license key and saving it, you accept that we use this information to contact WP Synchro license server.', 'moon114textdomain')domain'); ?>
+                <br><?php _e('After successful validation, the key will be revalidated every day to make sure it is still valid.', 'moon114textdomain')domain'); ?>
+                <br><?php _e('On the server, the key will be checked and request is logged, along with your public IP address and site url.', 'moon114textdomain')domain'); ?>
+                <br><?php _e('We dont save or send other information to the license server.', 'moon114textdomain')domain'); ?></p>
+            <p><?php _e('For every synchronization, the license server will be contacted to verify the license and the active sites limit for your subscription.', 'moon114textdomain')domain'); ?>
+                <br><?php _e('These requests contain only your license key and the urls of synchronization. These will be logged along with your public IP address.', 'moon114textdomain')domain'); ?></p>
         </div>
         <?php
     }

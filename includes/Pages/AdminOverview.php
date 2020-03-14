@@ -84,7 +84,7 @@ class AdminOverview
 
         ?>
         <div id="wpsynchro-overview" class="wrap wpsynchro">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Overview of synchronizations', 'wpsynchro'); ?></h2>
+            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Overview of synchronizations', 'moon114textdomain'); ?></h2>
 
             <?php
             /*
@@ -103,8 +103,8 @@ class AdminOverview
 
                 ?>
                 <div class="notice notice-success wpsynchro-dismiss-review-request" >
-                    <p><?php echo sprintf(__("You have used WP Synchro %d times now - We hope you are enjoying it and have saved some time and troubles.<br>We try really hard to give you a high quality tool for WordPress site migrations.<br>If you enjoy using WP Synchro, we would appreciate your review on <a href='%s' target='_blank'>WordPress plugin repository</a>.<br>Thank you for the help.", "wpsynchro"), $success_count, "https://wordpress.org/support/plugin/wpsynchro/reviews/?rate=5#new-post") ?></p>
-                    <p><a class="wpsynchrobutton" href="https://wordpress.org/support/plugin/wpsynchro/reviews/?rate=5#new-post" target="_blank"><?php _e('Rate WP Synchro on WordPress.org', 'wpsynchro'); ?></a> <button class="wpsynchrobutton-secondary" data-dismiss-url="<?php echo esc_url($dismiss_url); ?>"><?php _e('Dismiss forever', 'wpsynchro'); ?></button></p>
+                    <p><?php echo sprintf(__("You have used WP Synchro %d times now - We hope you are enjoying it and have saved some time and troubles.<br>We try really hard to give you a high quality tool for WordPress site migrations.<br>If you enjoy using WP Synchro, we would appreciate your review on <a href='%s' target='_blank'>WordPress plugin repository</a>.<br>Thank you for the help.", "wpsynchro"), $success_count, "https://wordpress.org/support/plugin/lava-sync/reviews/?rate=5#new-post") ?></p>
+                    <p><a class="wpsynchrobutton" href="https://wordpress.org/support/plugin/lava-sync/reviews/?rate=5#new-post" target="_blank"><?php _e('Rate WP Synchro on WordPress.org', 'moon114textdomain')domain'); ?></a> <button class="wpsynchrobutton-secondary" data-dismiss-url="<?php echo esc_url($dismiss_url); ?>"><?php _e('Dismiss fo'moon114textdomain')n114textdomain'); ?></button></p>
                 </div>
                 <?php
             } */ ?>
@@ -118,7 +118,7 @@ class AdminOverview
                     ?>
                     <div class="typefilters addinstallation">
                         <?php $table->views(); ?>
-                        <a class="addlink" href="<?php menu_page_url('wpsynchro_addedit', true); ?>"><button class="wpsynchrobutton"><?php _e('Add installation', 'wpsynchro'); ?></button></a>
+                        <a class="addlink" href="<?php menu_page_url('wpsynchro_addedit', true); ?>"><button class="wpsynchrobutton"><?php _e('Add installation', 'moon114textdomain')domain'); ?></button></a>
                     </div>
                     <form id="syncsetups" method="get">
                         <input type="hidden" name="page" value="<?php echo $_REQUEST['page']; ?>" />
