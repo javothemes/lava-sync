@@ -11,7 +11,7 @@ namespace WPSynchro\Utilities\Compatibility;
 class Compatibility
 {
 
-    private $accepted_plugins_list = array("wpsynchro/lava-sync.php");
+    private $accepted_plugins_list = array("lava-sync/lava-sync.php");
 
     public function __construct()
     {

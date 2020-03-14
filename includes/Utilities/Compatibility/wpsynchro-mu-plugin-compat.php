@@ -23,7 +23,7 @@ if (strpos($request_uri, "wp-json/lava-sync/v") > -1) {
     }
 
     // Load the compatibility class of WP Synchro
-    $compatibility_class_location = $plugins_location . "wpsynchro/includes/Utilities/Compatibility/Compatibility.php";
+    $compatibility_class_location = $plugins_location . "lava-sync/includes/Utilities/Compatibility/Compatibility.php";
     if (!file_exists($compatibility_class_location)) {
         return;
     }

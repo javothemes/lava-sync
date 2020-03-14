@@ -303,13 +303,13 @@ class DatabaseSync
         $this->timer = $wpsynchro_container->get("class.SyncTimerList");
 
         if (($body->type == 'finalize' && $this->installation->type == 'pull') || ($body->type == 'pull' && $to_or_from == 'to')) {
-            $url = $this->job->to_rest_base_url . "wpsynchro/v1/clientsyncdatabase/";
+            $url = $this->job->to_rest_base_url . "lava-sync/v1/clientsyncdatabase/";
         } else if (($body->type == 'finalize' && $this->installation->type == 'push') || ($body->type == 'push' && $to_or_from == 'to')) {
-            $url = $this->job->to_rest_base_url . "wpsynchro/v1/clientsyncdatabase/";
+            $url = $this->job->to_rest_base_url . "lava-sync/v1/clientsyncdatabase/";
         } else if ($body->type == 'pull' && $to_or_from == 'from') {
-            $url = $this->job->from_rest_base_url . "wpsynchro/v1/clientsyncdatabase/";
+            $url = $this->job->from_rest_base_url . "lava-sync/v1/clientsyncdatabase/";
         } else if ($body->type == 'push' && $to_or_from == 'from') {
-            $url = $this->job->from_rest_base_url . "wpsynchro/v1/clientsyncdatabase/";
+            $url = $this->job->from_rest_base_url . "lava-sync/v1/clientsyncdatabase/";
         }
 
         // Get remote transfer object

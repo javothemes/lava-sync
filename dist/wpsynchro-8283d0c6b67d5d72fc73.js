@@ -7348,7 +7348,7 @@
                             method: "post",
                             timeout: 3e4
                         };
-                    return "pull" == t.inst.type ? e.url = t.inst.site_url + "/wp-json/lava-sync/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.remote_transfer_token : "push" == t.inst.type && (e.url = t.local_rest_root + "wpsynchro/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.local_rest_acceskey), (0, i.default)(e).then(function(e) {
+                    return "pull" == t.inst.type ? e.url = t.inst.site_url + "/wp-json/lava-sync/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.remote_transfer_token : "push" == t.inst.type && (e.url = t.local_rest_root + "lava-sync/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.local_rest_acceskey), (0, i.default)(e).then(function(e) {
                         e.data.dbtables ? t.database_info.db_client_tables = e.data.dbtables : t.valid_endpoint_errors.push(wpsynchro_addedit.text_get_dbtables_error), e.data.files ? t.handleMetadataMapping(e.data, "source") : t.valid_endpoint_errors.push(wpsynchro_addedit.text_get_filedetails_error), t.check_valid_endpoints.source = !0, t.isValidEndpoint()
                     }).catch(function(e) {
                         e.response ? 401 == e.response.status || 403 == e.response.status ? t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_401403) : t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_other.format(e.response.statusText)) : e.request ? t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_request) : t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_default + e.message), t.check_valid_endpoints.source = !1, t.isValidEndpoint()
@@ -7360,7 +7360,7 @@
                             method: "post",
                             timeout: 3e4
                         };
-                    return "pull" == t.inst.type ? e.url = t.local_rest_root + "wpsynchro/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.local_rest_acceskey : "push" == t.inst.type && (e.url = t.inst.site_url + "/wp-json/lava-sync/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.remote_transfer_token), (0, i.default)(e).then(function(e) {
+                    return "pull" == t.inst.type ? e.url = t.local_rest_root + "lava-sync/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.local_rest_acceskey : "push" == t.inst.type && (e.url = t.inst.site_url + "/wp-json/lava-sync/v1/masterdata/?type[]=dbtables&type[]=filedetails&token=" + t.remote_transfer_token), (0, i.default)(e).then(function(e) {
                         e.data.files ? t.handleMetadataMapping(e.data, "target") : t.valid_endpoint_errors.push(wpsynchro_addedit.text_get_filedetails_error), t.check_valid_endpoints.target = !0, t.isValidEndpoint()
                     }).catch(function(e) {
                         e.response ? 401 == e.response.status || 403 == e.response.status ? t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_401403) : t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_other.format(e.response.statusText)) : e.request ? t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_request) : t.valid_endpoint_errors.push(wpsynchro_addedit.text_error_default + e.message), t.check_valid_endpoints.target = !1, t.isValidEndpoint()
@@ -7409,7 +7409,7 @@
                     })
                 },
                 showLocationPicker: function(t, e) {
-                    this.$refs.locationpickermodal.show(), this.files_locationpicker.relativepath = e, this.files_locationpicker.relativebasename = t, this.files_locationpicker.blockedpaths = [], "pull" == this.inst.type ? (this.files_locationpicker.resturl = this.inst.site_url + "/wp-json/lava-sync/v1/filesystem/", this.files_locationpicker.resttoken = this.remote_transfer_token) : (this.files_locationpicker.resturl = this.local_rest_root + "wpsynchro/v1/filesystem/", this.files_locationpicker.resttoken = this.local_rest_acceskey)
+                    this.$refs.locationpickermodal.show(), this.files_locationpicker.relativepath = e, this.files_locationpicker.relativebasename = t, this.files_locationpicker.blockedpaths = [], "pull" == this.inst.type ? (this.files_locationpicker.resturl = this.inst.site_url + "/wp-json/lava-sync/v1/filesystem/", this.files_locationpicker.resttoken = this.remote_transfer_token) : (this.files_locationpicker.resturl = this.local_rest_root + "lava-sync/v1/filesystem/", this.files_locationpicker.resttoken = this.local_rest_acceskey)
                 },
                 addFileLocation: function(t) {
                     for (var e = 0; e < this.inst.file_locations.length; e++)
@@ -9123,7 +9123,7 @@
                 handleWorkerThread: function(t) {
                     if (t.sync_errors.length > 0 || !t.should_continue) t.overall_spinner = !1;
                     else {
-                        var e = t.local_rest_root + "wpsynchro/v1/synchronize/",
+                        var e = t.local_rest_root + "lava-sync/v1/synchronize/",
                             n = {
                                 method: "post",
                                 data: {
@@ -9158,7 +9158,7 @@
                         t.handleStatus(t)
                     }, t.status_poll_interval);
                     else {
-                        var e = t.local_rest_root + "wpsynchro/v1/status/",
+                        var e = t.local_rest_root + "lava-sync/v1/status/",
                             n = {
                                 method: "post",
                                 data: {

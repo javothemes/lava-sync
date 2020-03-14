@@ -66,7 +66,7 @@ class AdminLogTable extends \WP_List_Table
 
         if (file_exists($logpath . $filename)) {
             $showloglink = add_query_arg(array('showlog' => $item->job_id, 'inst' => $item->installation_id), menu_page_url('wpsynchro_log', false));
-            $downloadloglink = rest_url("wpsynchro/v1/downloadlog/?job_id=" . $item->job_id . "&inst_id=" . $item->installation_id . "&_wpnonce=" . wp_create_nonce('wp_rest'));
+            $downloadloglink = rest_url("lava-sync/v1/downloadlog/?job_id=" . $item->job_id . "&inst_id=" . $item->installation_id . "&_wpnonce=" . wp_create_nonce('wp_rest'));
             $loglinks = "<a href='" . $showloglink . "' class='button'>" . __('Show log', 'wpsynchro') . "</a>";
             $loglinks .= " <a href='" . $downloadloglink . "' class='button'>" . __('Download log', 'wpsynchro') . "</a>";
             return $loglinks;

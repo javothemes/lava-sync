@@ -51,7 +51,7 @@ class InitiateSync
         // Start by getting local transfer token
         $local_host = trailingslashit(get_rest_url());
         $clientip = $common->getClientIPAddress();
-        $local_url = $local_host . "wpsynchro/v1/initiate/";
+        $local_url = $local_host . "lava-sync/v1/initiate/";
         $local_url = add_query_arg(array('type' => "local", 'frontend_ip' => $clientip[0]), $local_url);
         $local_token = $this->retrieveTransferTokenFromURL($local_url);
         // Check token
@@ -61,7 +61,7 @@ class InitiateSync
 
         // Get remote transfertoken
         $remote_host = trailingslashit($this->installation->site_url) . "wp-json/";
-        $remote_url = $remote_host . "wpsynchro/v1/initiate/?type=" . $this->installation->type;
+        $remote_url = $remote_host . "lava-sync/v1/initiate/?type=" . $this->installation->type;
         $remote_token = $this->retrieveTransferTokenFromURL($remote_url);
         // Check token
         if (strlen($remote_token) < 20) {

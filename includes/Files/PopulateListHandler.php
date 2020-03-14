@@ -192,9 +192,9 @@ class PopulateListHandler
 
         // Determine URL and key
         if ($type == "source") {
-            $url = $this->job->from_rest_base_url . "wpsynchro/v1/populatefilelist/";
+            $url = $this->job->from_rest_base_url . "lava-sync/v1/populatefilelist/";
         } else {
-            $url = $this->job->to_rest_base_url . "wpsynchro/v1/populatefilelist/";
+            $url = $this->job->to_rest_base_url . "lava-sync/v1/populatefilelist/";
         }
 
         // Gather exclusions
