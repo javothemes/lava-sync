@@ -74,5 +74,5 @@ return array(
     'WPSynchro\\Utilities\\DebugInformation' => $baseDir . '/includes/Utilities/DebugInformation.php',
     'WPSynchro\\Utilities\\SyncTimer' => $baseDir . '/includes/Utilities/SyncTimer.php',
     'WPSynchro\\Utilities\\SyncTimerList' => $baseDir . '/includes/Utilities/SyncTimerList.php',
-    'WPSynchro\\WPSynchroBootstrap' => $baseDir . '/includes/WPsynchroBootstrap.php',
+    'WPSynchro\\WPSynchroBootstrap' => $baseDir . '/includes/lava-syncBootstrap.php',
 );
