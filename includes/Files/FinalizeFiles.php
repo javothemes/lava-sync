@@ -37,9 +37,9 @@ class FinalizeFiles
         $this->job = $job;
 
         if ($this->installation->type == 'pull') {
-            $this->target_url = $this->job->to_rest_base_url . "lava-sync/v1/finalize/";
+            $this->target_url = $this->job->to_rest_base_url . "wpsynchro/v1/finalize/";
         } else if ($this->installation->type == 'push') {
-            $this->target_url = $this->job->to_rest_base_url . "lava-sync/v1/finalize/";
+            $this->target_url = $this->job->to_rest_base_url . "wpsynchro/v1/finalize/";
         }
     }
 

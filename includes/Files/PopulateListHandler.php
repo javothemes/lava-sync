@@ -192,9 +192,9 @@ class PopulateListHandler
 
         // Determine URL and key
         if ($type == "source") {
-            $url = $this->job->from_rest_base_url . "lava-sync/v1/populatefilelist/";
+            $url = $this->job->from_rest_base_url . "wpsynchro/v1/populatefilelist/";
         } else {
-            $url = $this->job->to_rest_base_url . "lava-sync/v1/populatefilelist/";
+            $url = $this->job->to_rest_base_url . "wpsynchro/v1/populatefilelist/";
         }
 
         // Gather exclusions
@@ -270,7 +270,7 @@ class PopulateListHandler
             $wpcontent_basename = basename($this->job->to_files_wp_content_dir);
         }
 
-        $exclusion_arr[] = $wpcontent_basename . "/" . $plugin_basename . "/lava-sync";
+        $exclusion_arr[] = $wpcontent_basename . "/" . $plugin_basename . "/wpsynchro";
 
         // Add uploads location
         if ($type == "source") {
@@ -279,7 +279,7 @@ class PopulateListHandler
             $uploads_basename = basename($this->job->to_files_uploads_dir);
         }
 
-        $exclusion_arr[] = $wpcontent_basename . "/" . $uploads_basename . "/lava-sync";
+        $exclusion_arr[] = $wpcontent_basename . "/" . $uploads_basename . "/wpsynchro";
 
         // Add .htaccess in web root, to prevent troubles with https redirects and other stuff
         if ($type == "source") {

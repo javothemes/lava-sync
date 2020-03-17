@@ -38,7 +38,7 @@ class CommonFunctions
         // Accesskey
         $local_accesskey = $this->getAccessKey();
         // Get initiate token
-        $request = new \WP_REST_Request('POST', '/lava-sync/v1/initiate');
+        $request = new \WP_REST_Request('POST', '/wpsynchro/v1/initiate');
         $request->set_query_params(array("type" => "local"));
         $response = rest_do_request($request);
         $data = $response->get_data();
@@ -201,7 +201,7 @@ class CommonFunctions
      */
     public function getLogLocation()
     {
-        return wp_upload_dir()['basedir'] . "/lava-sync/";
+        return wp_upload_dir()['basedir'] . "/wpsynchro/";
     }
 
     /**

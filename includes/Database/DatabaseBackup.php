@@ -78,7 +78,7 @@ class DatabaseBackup
                 $table->temp_name = $table->name;
 
                 // Send table to be dumped on remote
-                $url = $this->job->to_rest_base_url . "lava-sync/v1/backupdatabase/";
+                $url = $this->job->to_rest_base_url . "wpsynchro/v1/backupdatabase/";
                 $body = new \stdClass();
                 $body->table = $table;
                 $body->filename = "database_backup_" . $this->job->id . ".sql";

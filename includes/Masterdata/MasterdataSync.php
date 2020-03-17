@@ -217,9 +217,9 @@ class MasterdataSync
 
         // Get webservice url
         if (($this->installation->type == 'pull' && $to_or_from == 'to') || ($this->installation->type == 'push' && $to_or_from == 'from')) {
-            $baseurl = rest_url("lava-sync/v1/masterdata/?" . $querystring);
+            $baseurl = rest_url("wpsynchro/v1/masterdata/?" . $querystring);
         } else if (($this->installation->type == 'pull' && $to_or_from == 'from') || ($this->installation->type == 'push' && $to_or_from == 'to')) {
-            $baseurl = trailingslashit($this->installation->site_url) . "wp-json/lava-sync/v1/masterdata/?" . $querystring;
+            $baseurl = trailingslashit($this->installation->site_url) . "wp-json/wpsynchro/v1/masterdata/?" . $querystring;
         }
 
         $logger->log("DEBUG", "Calling masterdata service on: " . $baseurl . " with intent to user as '" . $to_or_from . "'");

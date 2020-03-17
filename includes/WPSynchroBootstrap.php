@@ -16,8 +16,8 @@ class WPSynchroBootstrap
      */
     public function __construct()
     {
-        define('WPSYNCHRO_PLUGIN_DIR', WP_PLUGIN_DIR . '/lava-sync/');
-        define('WPSYNCHRO_PLUGIN_URL', trailingslashit(plugins_url('/lava-sync')));
+        define('WPSYNCHRO_PLUGIN_DIR', WP_PLUGIN_DIR . '/wpsynchro/');
+        define('WPSYNCHRO_PLUGIN_URL', trailingslashit(plugins_url('/wpsynchro')));
     }
 
     /**
@@ -125,7 +125,7 @@ class WPSynchroBootstrap
     {
         add_action(
             'plugins_loaded', function () {
-            load_plugin_textdomain('wpsynchro', false, 'lava-sync/languages');
+            load_plugin_textdomain('wpsynchro', false, 'wpsynchro/languages');
         }
         );
     }
@@ -178,8 +178,8 @@ class WPSynchroBootstrap
 
                 $healthcheck_localize = array(
                     'rest_nonce' => wp_create_nonce('wp_rest'),
-                    'basic_check_resturl' => get_rest_url(get_current_blog_id(), 'lava-sync/v1/healthcheck/'),
-                    'timeout_check_resturl' => get_rest_url(get_current_blog_id(), 'lava-sync/v1/timeoutcheck/'),
+                    'basic_check_resturl' => get_rest_url(get_current_blog_id(), 'wpsynchro/v1/healthcheck/'),
+                    'timeout_check_resturl' => get_rest_url(get_current_blog_id(), 'wpsynchro/v1/timeoutcheck/'),
                     'timeout_expected_timeout' => $commonfunctions->getPHPMaxExecutionTime(),
                     'introtext' => __("Health check for WP Synchro on this installation", "wpsynchro"),
                     'helptitle' => __("Check if this installation will work with WP Synchro. It checks REST access, php extensions, hosting setup and more.", "wpsynchro"),

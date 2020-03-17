@@ -11,7 +11,7 @@ namespace WPSynchro\Utilities\Compatibility;
 class Compatibility
 {
 
-    private $accepted_plugins_list = array("lava-sync/lava-sync.php");
+    private $accepted_plugins_list = array("wpsynchro/wpsynchro.php");
 
     public function __construct()
     {
@@ -27,7 +27,7 @@ class Compatibility
     public function checkURL()
     {
         $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        if (strpos($request_uri, "wp-json/lava-sync") > -1) {
+        if (strpos($request_uri, "wp-json/wpsynchro") > -1) {
             return true;
         } else {
             return false;

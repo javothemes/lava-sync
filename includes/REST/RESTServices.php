@@ -20,7 +20,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/initiate/', array(
+                'wpsynchro/v1', '/initiate/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\Initiate();
@@ -35,7 +35,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/masterdata/', array(
+                'wpsynchro/v1', '/masterdata/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\MasterData();
@@ -51,7 +51,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/backupdatabase/', array(
+                'wpsynchro/v1', '/backupdatabase/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\DatabaseBackup();
@@ -67,7 +67,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/clientsyncdatabase/', array(
+                'wpsynchro/v1', '/clientsyncdatabase/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\ClientSyncDatabase();
@@ -83,7 +83,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/populatefilelist/', array(
+                'wpsynchro/v1', '/populatefilelist/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\PopulateFileList();
@@ -99,7 +99,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/filetransfer/', array(
+                'wpsynchro/v1', '/filetransfer/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\FileTransfer();
@@ -115,7 +115,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/getfiles/', array(
+                'wpsynchro/v1', '/getfiles/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\GetFiles();
@@ -131,7 +131,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/finalize/', array(
+                'wpsynchro/v1', '/finalize/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\Finalize();
@@ -147,7 +147,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/filesystem/', array(
+                'wpsynchro/v1', '/filesystem/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\Filesystem();
@@ -163,7 +163,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/synchronize/', array(
+                'wpsynchro/v1', '/synchronize/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\Synchronize();
@@ -185,7 +185,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/status/', array(
+                'wpsynchro/v1', '/status/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\Status();
@@ -207,7 +207,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/downloadlog/', array(
+                'wpsynchro/v1', '/downloadlog/', array(
                 'methods' => 'GET',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\DownloadLog();
@@ -225,7 +225,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/healthcheck/', array(
+                'wpsynchro/v1', '/healthcheck/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\HealthCheck();
@@ -243,7 +243,7 @@ class RESTServices
         add_action(
             'rest_api_init', function () {
             register_rest_route(
-                'lava-sync/v1', '/timeoutcheck/', array(
+                'wpsynchro/v1', '/timeoutcheck/', array(
                 'methods' => 'POST',
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\TimeoutCheck();

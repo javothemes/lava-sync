@@ -262,7 +262,7 @@ class ServiceController
         $wpsynchro_container->share(
             'class.Logger', function() {
 
-            $logpath = wp_upload_dir()['basedir'] . "/lava-sync/";
+            $logpath = wp_upload_dir()['basedir'] . "/wpsynchro/";
             $logger = new \WPSynchro\Logger\FileLogger;
             $logger->setFilePath($logpath);
 

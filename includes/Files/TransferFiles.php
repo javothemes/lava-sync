@@ -39,11 +39,11 @@ class TransferFiles
         $this->job = $job;
 
         if ($this->installation->type == 'pull') {
-            $this->filetransfer_target_url = $this->job->to_rest_base_url . "lava-sync/v1/filetransfer/";
-            $this->getfiles_source_url = $this->job->from_rest_base_url . "lava-sync/v1/getfiles/";
+            $this->filetransfer_target_url = $this->job->to_rest_base_url . "wpsynchro/v1/filetransfer/";
+            $this->getfiles_source_url = $this->job->from_rest_base_url . "wpsynchro/v1/getfiles/";
         } else if ($this->installation->type == 'push') {
-            $this->filetransfer_target_url = $this->job->to_rest_base_url . "lava-sync/v1/filetransfer/";
-            $this->getfiles_source_url = $this->job->from_rest_base_url . "lava-sync/v1/getfiles/";
+            $this->filetransfer_target_url = $this->job->to_rest_base_url . "wpsynchro/v1/filetransfer/";
+            $this->getfiles_source_url = $this->job->from_rest_base_url . "wpsynchro/v1/getfiles/";
         }
     }
 

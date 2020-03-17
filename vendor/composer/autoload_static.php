@@ -89,7 +89,7 @@ class ComposerStaticInit0443667efefb62f831d90067781ebd1c
         'WPSynchro\\Utilities\\DebugInformation' => __DIR__ . '/../..' . '/includes/Utilities/DebugInformation.php',
         'WPSynchro\\Utilities\\SyncTimer' => __DIR__ . '/../..' . '/includes/Utilities/SyncTimer.php',
         'WPSynchro\\Utilities\\SyncTimerList' => __DIR__ . '/../..' . '/includes/Utilities/SyncTimerList.php',
-        'WPSynchro\\WPSynchroBootstrap' => __DIR__ . '/../..' . '/includes/lava-syncBootstrap.php',
+        'WPSynchro\\WPSynchroBootstrap' => __DIR__ . '/../..' . '/includes/WPSynchroBootstrap.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
