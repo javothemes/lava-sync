@@ -2,7 +2,7 @@
 /*
   Plugin Name: Lava Sync
   Plugin URI: https://moon114.com/home
-  Description: Complete migration plugin for WordPress - Synchronization of database and files made easy.
+  Description: Sync!!!
   Version: 0.0.0.1
   Author: WPSynchro
   Author URI: https://moon114.com
