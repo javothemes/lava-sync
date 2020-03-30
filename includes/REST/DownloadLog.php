@@ -37,7 +37,7 @@ class DownloadLog
             $logcontents = "";
 
             // Intro
-            $logcontents .= "Beware: Do not share this file with other people than WP Synchro support - It contains data that can compromise your site." . PHP_EOL . PHP_EOL;
+            //$logcontents .= "Beware: Do not share this file with other people than WP Synchro support - It contains data that can compromise your site." . PHP_EOL . PHP_EOL;
 
             // Log data
             $logcontents .= file_get_contents($logpath . $filename);

@@ -59,7 +59,7 @@ class AdminLog
 
         ?>
         <div class="wrap wpsynchro-log">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Last synchronization logs', 'wpsynchro'); ?></h2>
+            <h2>Lava Synchro <?= WPSYNCHRO_VERSION ?> ! - <?php _e('Last synchronization logs', 'wpsynchro'); ?></h2>
 
             <div class="logremove">                   
                 <p><?php _e('See your last synchronizations and the result of them. Here you can also download the log file from the synchronization.', 'wpsynchro'); ?></p>
@@ -107,7 +107,7 @@ class AdminLog
             $logcontents = file_get_contents($logpath . $filename);
 
             echo "<h1>Log file for jobid " . $job_id . "</h1> ";
-            echo "<div><h3>Beware: Do not share this file with other people than WP Synchro support - It contains data that can compromise your site.</h3></div>";
+            //echo "<div><h3>Beware: Do not share this file with other people than WP Synchro support - It contains data that can compromise your site.</h3></div>";
 
             echo '<pre>';
             echo $logcontents;

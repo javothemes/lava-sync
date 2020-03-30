@@ -140,14 +140,14 @@ class WPSynchroBootstrap
         add_action(
             'admin_menu', function () {
 
-            add_menu_page('WP Synchro', 'WP Synchro', 'manage_options', 'wpsynchro_menu', array(__NAMESPACE__ . '\\Pages\AdminOverview', 'render'), 'dashicons-update', 76);
+            add_menu_page('Lava Synchro', 'Lava Synchro', 'manage_options', 'wpsynchro_menu', array(__NAMESPACE__ . '\\Pages\AdminOverview', 'render'), 'dashicons-update', 76);
             add_submenu_page('wpsynchro_menu', '', '', 'manage_options', 'wpsynchro_menu', '');
             add_submenu_page('wpsynchro_menu', __('Overview', 'wpsynchro'), __('Overview', 'wpsynchro'), 'manage_options', 'wpsynchro_overview', array(__NAMESPACE__ . '\\Pages\AdminOverview', 'render'));
             add_submenu_page('wpsynchro_menu', __('Logs', 'wpsynchro'), __('Logs', 'wpsynchro'), 'manage_options', 'wpsynchro_log', array(__NAMESPACE__ . '\\Pages\AdminLog', 'render'));
             add_submenu_page('wpsynchro_menu', __('Setup', 'wpsynchro'), __('Setup', 'wpsynchro'), 'manage_options', 'wpsynchro_setup', array(__NAMESPACE__ . '\\Pages\AdminSetup', 'render'));
             add_submenu_page('wpsynchro_menu', __('Support', 'wpsynchro'), __('Support', 'wpsynchro'), 'manage_options', 'wpsynchro_support', array(__NAMESPACE__ . '\\Pages\AdminSupport', 'render'));
             if (\WPSynchro\CommonFunctions::isPremiumVersion()) {
-                add_submenu_page('wpsynchro_menu', __('Licensing', 'wpsynchro'), __('Licensing', 'wpsynchro'), 'manage_options', 'wpsynchro_licensing', array(__NAMESPACE__ . '\\Pages\AdminLicensing', 'render'));
+                //add_submenu_page('wpsynchro_menu', __('Licensing', 'wpsynchro'), __('Licensing', 'wpsynchro'), 'manage_options', 'wpsynchro_licensing', array(__NAMESPACE__ . '\\Pages\AdminLicensing', 'render'));
             }
 
             // Run installation page (not in menu)
@@ -181,7 +181,7 @@ class WPSynchroBootstrap
                     'basic_check_resturl' => get_rest_url(get_current_blog_id(), 'wpsynchro/v1/healthcheck/'),
                     'timeout_check_resturl' => get_rest_url(get_current_blog_id(), 'wpsynchro/v1/timeoutcheck/'),
                     'timeout_expected_timeout' => $commonfunctions->getPHPMaxExecutionTime(),
-                    'introtext' => __("Health check for WP Synchro on this installation", "wpsynchro"),
+                    'introtext' => __("Health check for Synchro on this installation", "wpsynchro"),
                     'helptitle' => __("Check if this installation will work with WP Synchro. It checks REST access, php extensions, hosting setup and more.", "wpsynchro"),
                     'basic_check_desc' => __("Performing basic health check", "wpsynchro"),
                     'timeout_check_desc' => __("Performing timeout test (will take up to {0} seconds)", "wpsynchro"),

@@ -3,7 +3,7 @@
   Plugin Name: Lava Sync
   Plugin URI: https://moon114.com/home
   Description: Sync!!!
-  Version: 0.0.0.1
+  Version: 0.0.0.2
   Author: WPSynchro
   Author URI: https://moon114.com
   Domain Path: /languages/

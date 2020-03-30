@@ -96,7 +96,7 @@ class AdminAddEdit
 
         ?>
         <div id="wpsynchro-addedit" class="wrap wpsynchro"  v-cloak>
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( $is_pro ? 'PRO' : 'FREE' ); ?> - <?php ( $id > 0 ? _e('Edit installation', 'wpsynchro') : _e('Add installation', 'wpsynchro') ); ?></h2>
+            <h2>Lava Synchro <?= WPSYNCHRO_VERSION ?> - <?php ( $id > 0 ? _e('Edit installation', 'wpsynchro') : _e('Add installation', 'wpsynchro') ); ?></h2>
 
             <?php
             if (count($compat_errors) > 0) {

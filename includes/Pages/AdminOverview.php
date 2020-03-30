@@ -84,7 +84,7 @@ class AdminOverview
 
         ?>
         <div id="wpsynchro-overview" class="wrap wpsynchro">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Overview of synchronizations', 'wpsynchro'); ?></h2>
+            <h2>Lava Synchro <?= WPSYNCHRO_VERSION ?> ! - <?php _e('Overview of synchronizations', 'wpsynchro'); ?></h2>
 
             <?php
             /*

@@ -55,7 +55,7 @@ class AdminLicensing
 
         ?>
         <div class="wrap wpsynchro-licensing">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Licensing', 'wpsynchro'); ?></h2>
+            <h2>Lava Synchro <?= WPSYNCHRO_VERSION ?> ! - <?php _e('Licensing', 'wpsynchro'); ?></h2>
             <p><?php _e('Here you can insert your license key for your PRO version, so you can use the full functionality of WP Synchro PRO.', 'wpsynchro'); ?></p>
 
 

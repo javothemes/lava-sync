@@ -128,7 +128,7 @@ class AdminSetup
 
         ?>
         <div class="wrap wpsynchro-setup">
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Setup', 'wpsynchro'); ?></h2>
+            <h2>Lava Synchro <?= WPSYNCHRO_VERSION ?> ! - <?php _e('Setup', 'wpsynchro'); ?></h2>
             <p><?php _e('Configure the access key used for accessing this installation from remote. Treat the access key like a password and keep it safe from others.<br>This is also where you choose what methods (pull/push) are allowed when accessing this installation from remote.', 'wpsynchro'); ?></p>
 
             <?php
@@ -180,7 +180,7 @@ class AdminSetup
                     <tr>
                         <td><?php _e('Optimize compatibility', 'wpsynchro'); ?></td>
                         <td>
-                            <label><input type="checkbox" name="enable_muplugin" id="enable_muplugin" <?php echo ( $enable_muplugin ? ' checked ' : '' ); ?>  /> <?php _e('Enable MU Plugin to optimize compatibility on WP Synchro requests (recommended)', 'wpsynchro'); ?> </label><br>                         
+                            <label><input type="checkbox" name="enable_muplugin" id="enable_muplugin" <?php echo ( $enable_muplugin ? ' checked ' : '' ); ?>  /> <?php _e('Enable MU Plugin to optimize compatibility (recommended)', 'wpsynchro'); ?> </label><br>                         
                         </td>
                     </tr>
                     <tr><td><p></p></td><td></td></tr>

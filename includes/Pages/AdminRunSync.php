@@ -70,7 +70,7 @@ class AdminRunSync
 
         ?>
         <div id="wpsynchro-run-sync" class="wrap" v-cloak>
-            <h2>WP Synchro <?= WPSYNCHRO_VERSION ?> <?php echo ( \WPSynchro\CommonFunctions::isPremiumVersion() ? 'PRO' : 'FREE' ); ?> - <?php _e('Run synchronization', 'wpsynchro'); ?> <div v-if="overall_spinner" class="spinner"></div></h2>
+            <h2>Lava Synchro <?= WPSYNCHRO_VERSION ?> ! - <?php _e('Run synchronization', 'wpsynchro'); ?> <div v-if="overall_spinner" class="spinner"></div></h2>
 
             <div class="runsync-container">
                 <div class="syncsection">
