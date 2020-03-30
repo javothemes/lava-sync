@@ -145,7 +145,7 @@ class WPSynchroBootstrap
             add_submenu_page('wpsynchro_menu', __('Overview', 'wpsynchro'), __('Overview', 'wpsynchro'), 'manage_options', 'wpsynchro_overview', array(__NAMESPACE__ . '\\Pages\AdminOverview', 'render'));
             add_submenu_page('wpsynchro_menu', __('Logs', 'wpsynchro'), __('Logs', 'wpsynchro'), 'manage_options', 'wpsynchro_log', array(__NAMESPACE__ . '\\Pages\AdminLog', 'render'));
             add_submenu_page('wpsynchro_menu', __('Setup', 'wpsynchro'), __('Setup', 'wpsynchro'), 'manage_options', 'wpsynchro_setup', array(__NAMESPACE__ . '\\Pages\AdminSetup', 'render'));
-            add_submenu_page('wpsynchro_menu', __('Support', 'wpsynchro'), __('Support', 'wpsynchro'), 'manage_options', 'wpsynchro_support', array(__NAMESPACE__ . '\\Pages\AdminSupport', 'render'));
+            add_submenu_page('wpsynchro_menu', __('Health Check', 'wpsynchro'), __('Health Check', 'wpsynchro'), 'manage_options', 'wpsynchro_support', array(__NAMESPACE__ . '\\Pages\AdminSupport', 'render'));
             if (\WPSynchro\CommonFunctions::isPremiumVersion()) {
                 //add_submenu_page('wpsynchro_menu', __('Licensing', 'wpsynchro'), __('Licensing', 'wpsynchro'), 'manage_options', 'wpsynchro_licensing', array(__NAMESPACE__ . '\\Pages\AdminLicensing', 'render'));
             }
