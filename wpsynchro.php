@@ -4,7 +4,7 @@
   Plugin URI: https://moon114.com/home
   Description: Sync!!!
   Version: 0.0.0.2
-  Author: WPSynchro
+  Author: Lava Code
   Author URI: https://moon114.com
   Domain Path: /languages/
   Text Domain: moon114textdomain
