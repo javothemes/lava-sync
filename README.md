@@ -1,2 +1,2 @@
 # lava-sync
-# Folde name : wpsynchro
+# Folder name : lava-sync ==> wpsynchro ==> 
