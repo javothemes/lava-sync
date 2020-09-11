@@ -2,8 +2,8 @@
 /*
   Plugin Name: Lava Sync
   Plugin URI: https://moon114.com/home
-  Description: Sync!!!
-  Version: 0.0.0.2
+  Description: LV Sync!!!
+  Version: 0.0.0.3
   Author: Lava Code
   Author URI: https://moon114.com
   Domain Path: /languages/
@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
     exit;
 } // Exit if accessed directly
 
-define('WPSYNCHRO_VERSION', '0.0.0.1');
+define('WPSYNCHRO_VERSION', '0.0.0.3');
 define('WPSYNCHRO_DB_VERSION', '4');
 define('WPSYNCHRO_NEWEST_MU_COMPATIBILITY_VERSION', '1.0.3');
 
