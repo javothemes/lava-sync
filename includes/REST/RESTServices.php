@@ -25,7 +25,8 @@ class RESTServices
                 'callback' => function($request) {
                     $restservice = new \WPSynchro\REST\Initiate();
                     return $restservice->service($request);
-                }
+                },
+                'permission_callback' => '__return_true',
                 )
             );
         }
